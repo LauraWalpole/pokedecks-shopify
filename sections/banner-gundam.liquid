@@ -1,0 +1,20 @@
+{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+{% assign tcg = metaobjects.tcg.gundam %}
+
+<section class="section-white">
+  <div class="isolate page-width">
+    <div class="collection-pkmn__image-container-darkshadow">
+      <img
+        src="{{ tcg.image | image_url: width: auto , height: auto }}"
+      >
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "banner-gundam",
+    "settings": []
+  }
+{% endschema %}

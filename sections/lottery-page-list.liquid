@@ -1,0 +1,119 @@
+{% liquid
+  assign faqs = metaobjects.random_draw_faq_list.values
+  assign order = '0,1,2,3,4,5,6,7,8' | split: ',' 
+%}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const accordions = document.querySelectorAll(".js-accordion");
+
+    accordions.forEach(accordion => {
+      const triggers = accordion.querySelectorAll(".js-accordion-trigger");
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isOpen = item.classList.contains("open");
+
+          // Close all items
+          accordion.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+
+          // If it wasn't already open, open it
+          if (!isOpen) {
+            item.classList.add("open");
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+
+  .faq-list {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 2px solid #8c9eb1;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    background: #2c3a57;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+    color: #ffffff;
+  }
+
+  .faq-question:hover {
+    background: linear-gradient(-45deg, #603ec8 0%, #d14391 100%);
+  }
+
+  .faq-question .icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.open .faq-question .icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: #fff;
+  }
+
+  .faq-item.open .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+    }
+  
+  .faq-answer-content-left {
+    text-align: left;
+  }
+</style>
+
+<section class="section-light-grey">
+  <div class="isolate page-width">
+    <div class="faq-theme-group">
+      <div class="faq-list js-accordion">
+        {% for position in order %}
+          {% for faq in faqs %}
+            {% if faq.title.value == position %}
+              <div class="faq-item">
+                <button class="faq-question js-accordion-trigger">
+                  <span>{{ faq.question.value }}</span>
+                  <span class="icon">+</span>
+                </button>
+                <div class="faq-answer js-accordion-content">
+                  <p class="faq-answer-content-left">{{ faq.answer | metafield_tag }}</p>
+                </div>
+              </div>
+        {% endif %}
+        {% endfor %}
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "lottery faq page list"
+}
+{% endschema %}

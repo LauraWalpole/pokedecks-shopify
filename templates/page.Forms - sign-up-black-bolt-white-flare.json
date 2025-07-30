@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "lottery-banner": {
+      "type": "lottery-banner",
+      "settings": {}
+    },
+    "rich_text_wRkQBm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rNB6w9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Entry to the Black Bolt & White Flare draw is now closed",
+            "heading_size": "h2"
+          }
+        },
+        "text_3JjaW8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entries will be reviewed prior to the draw taking place.<br/>For further details around our draw-system please review the FAQ page provided.</p>"
+          }
+        },
+        "button_DfaYFH": {
+          "type": "button",
+          "settings": {
+            "button_label": "View FAQs",
+            "button_link": "shopify://pages/pokedecks-random-draw",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rNB6w9",
+        "text_3JjaW8",
+        "button_DfaYFH"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+    
+    
+  },
+  "order": [
+    "lottery-banner",
+    "rich_text_wRkQBm"
+
+  ]
+}

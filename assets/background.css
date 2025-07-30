@@ -1,0 +1,5 @@
+.background-gradient-tropical {
+  background: var(--gradient-tropical-1);
+  background-size: auto, cover;
+  background-position: top left, center;
+}

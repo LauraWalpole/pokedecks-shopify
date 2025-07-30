@@ -1,0 +1,24 @@
+{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+
+
+{% assign 
+  lottery = metaobjects.pok_lottery['lottery-0']
+%}
+
+
+<section class="section-white">
+    <div class="isolate page-width">
+      <div class="collection-pkmn__image-container-darkshadow">
+        <img
+          src="{{ lottery.banner | image_url: width: auto, height: auto  }}"
+        >
+      </div>
+    </div>
+  </section>
+
+{% schema %}
+  {
+    "name": "lottery banner",
+    "settings": []
+  }
+{% endschema %}
