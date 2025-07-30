@@ -1,9 +1,9 @@
-.collection-pkmn--with-image {
+.pokedecks-category--with-image {
   display: flex;
   justify-content: center;
 }
 
-.collection-pkmn__inner {
+.pokedecks-category__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
@@ -12,36 +12,36 @@
   width: 100%;
 }
 
-.collection-pkmn--with-image .collection-pkmn__inner {
+.pokedecks-category--with-image .pokedecks-category__inner {
   margin-bottom: 0;
   padding-bottom: 2rem;
 }
 
-.collection-pkmn--with-image .collection-pkmn__inner {
+.pokedecks-category--with-image .pokedecks-category__inner {
   padding-bottom: 0;
 }
 
-.collection-pkmn__text-wrapper {
+.pokedecks-category__text-wrapper {
   flex-basis: 100%;
 }
 
-.collection-pkmn__inner {
+.pokedecks-category__inner {
   align-items: center;
   padding-bottom: 0;
 }
 
-.collection-pkmn__title {
+.pokedecks-category__title {
   margin: 2.5rem 0;
 }
 
-.collection-pkmn__title + .collection-pkmn__description {
+.pokedecks-category__title + .pokedecks-category__description {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 1.6rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
 }
 
-.collection-pkmn__image-container-darkshadow {
+.pokedecks-category__image-container-darkshadow {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
@@ -50,7 +50,7 @@
   overflow: hidden;
 }
 
-.collection-pkmn__image-container-lightshadow {
+.pokedecks-category__image-container-lightshadow {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
@@ -59,26 +59,26 @@
   overflow: hidden;
 }
 
-.collection-pkmn__image-container img {
+.pokedecks-category__image-container img {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-.collection-pkmn__description {
+.pokedecks-category__description {
   max-width: 100%;
 }
 
-.collection-pkmn__title {
+.pokedecks-category__title {
   margin: 0;
 }
 
-.collection-pkmn__title-light {
+.pokedecks-category__title-light {
   margin: 0;
   color: #ffffff;
 }
 
-.collection-pkmn__content-wrapper {
+.pokedecks-category__content-wrapper {
   grid-column: 1 / -1;
   display: flex;
   margin-top: 15px;
@@ -87,23 +87,23 @@
   width: 100%;
 }
 
-.collection-pkmn__text-wrapper,
-.collection-pkmn__data-wrapper {
+.pokedecks-category__text-wrapper,
+.pokedecks-category__data-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.collection-pkmn__text-wrapper > *,
-.collection-pkmn__data-wrapper > * {
+.pokedecks-category__text-wrapper > *,
+.pokedecks-category__data-wrapper > * {
   flex-grow: 1;
 }
 
-.collection-pkmn__text-wrapper {
+.pokedecks-category__text-wrapper {
   grid-column: 1;
 }
 
-.collection-pkmn__data-wrapper {
+.pokedecks-category__data-wrapper {
   grid-column: 2;
   position: relative;
   padding: 10px;
@@ -114,14 +114,14 @@
 }
 
 /* Pseudo-element used for gradient border */
-.collection-pkmn__data-wrapper::before {
+.pokedecks-category__data-wrapper::before {
   content: "";
   position: absolute;
   border-radius: 12px;
   z-index: -2;
 }
 
-.collection-pkmn__data-wrapper::after {
+.pokedecks-category__data-wrapper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -190,40 +190,40 @@
 
 /* Responsive design for mobile devices */
 @media screen and (max-width: 768px) {
-  .collection-pkmn.collection-pkmn--with-image {
+  .pokedecks-category.pokedecks-category--with-image {
     padding: calc(4rem + var(--page-width-margin)) 0
       calc(4rem + var(--page-width-margin));
     overflow: hidden;
   }
 
-  .collection-pkmn__title + .collection-pkmn__description {
+  .pokedecks-category__title + .pokedecks-category__description {
     font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .collection-pkmn {
+  .pokedecks-category {
     padding: 0;
   }
 
-  .collection-pkmn__inner {
+  .pokedecks-category__inner {
     display: flex;
     flex-direction: column;
   }
 
-  .collection-pkmn__image-container {
+  .pokedecks-category__image-container {
     height: 20rem;
     order: 1;
     width: 100%;
   }
 
-  .collection-pkmn__image-container img {
+  .pokedecks-category__image-container img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
 
-  .collection-pkmn__content-wrapper {
+  .pokedecks-category__content-wrapper {
     display: flex;
     flex-direction: column;
     order: 2;
@@ -231,8 +231,8 @@
     gap: 5px;
   }
 
-  .collection-pkmn__text-wrapper,
-  .collection-pkmn__data-wrapper {
+  .pokedecks-category__text-wrapper,
+  .pokedecks-category__data-wrapper {
     width: 100%;
   }
 }

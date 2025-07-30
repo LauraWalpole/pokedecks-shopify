@@ -26,9 +26,9 @@
   --color-bright-purple: #7a2c9e;
   --gradient-tropical-1: linear-gradient(
     45deg,
-    rgba(122, 44, 158, 1) 11%,
-    rgba(221, 87, 137, 1) 49%,
-    rgba(250, 220, 54, 1) 87%
+    #7a2c9e 11%,
+    #dd5789 49%,
+    #fadc36 87%
   );
 }
 
@@ -3997,6 +3997,61 @@ details-disclosure > details {
   text-align: center;
 }
 
+.section-gradient-tropical {
+  width: 100%;
+  padding: 50px 20px;
+  position: relative;
+  background: 
+  url('pattern-geometric-2.png') repeat,
+  linear-gradient(45deg, #7a2c9e, #dd5789 , #fadc36);
+  background-size: auto, 600% 600%; /* make gradient much larger than the section */
+  background-position: top left, 0% 50%; /* initial gradient position */
+  animation: moveGradient 15s ease infinite;
+  background-color: none;
+  text-align: center;
+}
+@keyframes moveGradient {
+  0% {
+    background-position: top left, 0% 50%;
+  }
+  50% {
+    background-position: top left, 100% 50%;
+  }
+  100% {
+    background-position: top left, 0% 50%;
+  }
+}
+
+.section-gradient-radial-tropical {
+  width: 100%;
+  padding: 50px 20px;
+  position: relative;
+  background:
+  radial-gradient(at 67% 54%, #603ec8 0px, transparent 60%), 
+  radial-gradient(at 6% 84%, #dd5789 0px, transparent 50%), 
+  radial-gradient(at 36% 62%, #93ffd8 0px, transparent 50%), 
+  radial-gradient(at 94% 97%, #fadc36 0px, transparent 50%), 
+  #603ec8;  
+  background-size: 200% 200%;
+  animation: meshFlow 20s ease-in-out infinite alternate;
+  background-color: none;
+  text-align: center;
+}
+
+@keyframes meshFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+    
 .section-medium-grey {
   width: 100%;
   padding: 50px 20px;

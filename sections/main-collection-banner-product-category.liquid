@@ -1,5 +1,5 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 
 {% liquid
   assign handle = collection.handle
@@ -15,7 +15,7 @@
     margin:8px;
   }
 
-  .collection-pkmn__image-container-darkshadow {
+  .pokedecks-category__image-container-darkshadow {
     max-width: 100%;
   }
 
@@ -26,7 +26,7 @@
 
   .collection
     @media screen and (max-width: 749px) {
-      .collection-pkmn--with-image .collection-pkmn__inner {
+      .pokedecks-category--with-image .pokedecks-category__inner {
         padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
       }
     }
@@ -36,7 +36,7 @@
 {% if collection.img %}
   <section class="section-white">
     <div class="isolate page-width">
-      <div class="collection-pkmn__image-container-darkshadow">
+      <div class="pokedecks-category__image-container-darkshadow">
         <img
           src="{{ collection.image | image_url: width: auto, height: auto  }}"
         >

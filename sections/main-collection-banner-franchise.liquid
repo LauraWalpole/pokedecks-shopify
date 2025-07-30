@@ -1,17 +1,17 @@
-{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 
 {%- assign colour_one = collection.metafields.collection.colour_one | default: '#ff0000' -%}
 {%- assign colour_two = collection.metafields.collection.colour_two | default: '#0000ff' -%}
 
 {%- style -%}
     @media screen and (max-width: 749px) {
-      .collection-pkmn--with-image .collection-pkmn__inner {
+      .pokedecks-category--with-image .pokedecks-category__inner {
         padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
       }
     }
 
     /* Pseudo-element used for gradient border */
-  .collection-pkmn__data-wrapper::before{
+  .pokedecks-category__data-wrapper::before{
     content: "";
     position: absolute;
     top: -6px;
@@ -27,7 +27,7 @@
 {%- if section.settings.show_collection_image and collection.image -%}
   <section class="section-white">
     <div class="isolate page-width">
-      <div class="collection-pkmn__image-container-darkshadow">
+      <div class="pokedecks-category__image-container-darkshadow">
         <img
           src="{{ collection.image | image_url: width: auto, height: auto  }}"
         >
@@ -37,18 +37,18 @@
 {% endif %}
 <section class="section-light-grey">
   <div class="isolate page-width">
-    <div class="collection-pkmn__content-wrapper">
-      <div class="collection-pkmn__text-wrapper">
-        <h1 class="collection-pkmn__title">
+    <div class="pokedecks-category__content-wrapper">
+      <div class="pokedecks-category__text-wrapper">
+        <h1 class="pokedecks-category__title">
           <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
           {{ collection.metafields.collection.headline.value }}
         </h1>
 
         {%- if section.settings.show_collection_description -%}
-          <div class="collection-pkmn__description">{{ collection.description }}</div>
+          <div class="pokedecks-category__description">{{ collection.description }}</div>
         {%- endif -%}
       </div>
-      <div class="collection-pkmn__data-wrapper">
+      <div class="pokedecks-category__data-wrapper">
         <div class="collection-data-grid">
           <div class="collection-data-item">
             <h2 class="collection-data-title">{{ collection.title }} information</h2>

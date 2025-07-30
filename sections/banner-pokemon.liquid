@@ -1,10 +1,10 @@
-{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {% assign tcg = metaobjects.tcg.pokemon %}
 
 <section class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   <div class="isolate page-width">
     {{ section.settings.section_color_scheme }}
-    <div class="collection-pkmn__image-container-darkshadow">
+    <div class="pokedecks-category__image-container-darkshadow">
       <img
         src="{{ tcg.image | image_url: width: auto , height: auto }}"
       >

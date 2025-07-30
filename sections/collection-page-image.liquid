@@ -1,10 +1,10 @@
-{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {% assign series_handle = request.path | split: '/' | last %}
 {% assign series = metaobjects.tcg_series_pkmn[series_handle] %}
 
 <section class="section-white">
   <div class="isolate page-width">
-    <div class="collection-pkmn__image-container-darkshadow">
+    <div class="pokedecks-category__image-container-darkshadow">
       <img
         src="{{ series.logo | image_url: width: auto , height: auto }}"
       >

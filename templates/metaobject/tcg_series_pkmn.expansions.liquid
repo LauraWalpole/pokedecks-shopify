@@ -1,4 +1,4 @@
-{{ 'component-collection-pkmn.css' | asset_url | stylesheet_tag }}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 
 {% assign expansions_with_dates = '' %}
 {% assign series_handle = request.path | split: '/' | last %}
@@ -52,7 +52,7 @@
 
 
 
-      .collection-pkmn__data-wrapper::before{
+      .pokedecks-category__data-wrapper::before{
         content: "";
         position: absolute;
         top: -6px;
@@ -220,7 +220,7 @@
 <!-- Section: Series image -->
 <section class="section-white">
   <div class="isolate page-width">
-    <div class="collection-pkmn__image-container-darkshadow">
+    <div class="pokedecks-category__image-container-darkshadow">
       <img
         src="{{ series.logo | image_url: width: auto , height: auto }}"
       >
@@ -231,10 +231,10 @@
 <!-- Section: Page description -->
 <section class="section-light-grey">
   <div class="isolate page-width">
-    <div class="collection-pkmn__data-wrapper">
+    <div class="pokedecks-category__data-wrapper">
       <div class="collection-data-grid">
         <div class="collection-data-item">
-          <h1 class="collection-pkmn__title-light">{{ series.name }}</h1>
+          <h1 class="pokedecks-category__title-light">{{ series.name }}</h1>
           <p>{{ series.description }}</p>
           <div class="collection-data-item">
             <!-- Main Series Expansions Dropdown -->
