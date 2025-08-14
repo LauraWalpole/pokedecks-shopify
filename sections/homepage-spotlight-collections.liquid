@@ -58,6 +58,7 @@
       </div>
     </section>
 
+    {% if  secondary_collection %}
     <!-- Secondary Collection -->
     <section class="spotlight-section status-{{ secondary_collection.status.value | handle }} ">
       <div class="status-banner">
@@ -96,7 +97,9 @@
         </div>
       </div>
     </section>
+  {% endif %}
 
+    {% if  tertiary_collection %}
     <!-- Tertiary collection -->
     <section class="spotlight-section status-{{ tertiary_collection.status.value | handle }} ">
       <div class="status-banner">
@@ -135,6 +138,7 @@
         </div>
       </div>
     </section>
+    {% endif %}
   </div>
 </section>
 
