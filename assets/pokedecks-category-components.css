@@ -113,7 +113,52 @@
   z-index: -1;
 }
 
-/* Pseudo-element used for gradient border */
+/*
+.holo-card {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.holo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+
+.holo-card::after {
+  content: "";
+  position: absolute;
+  top: -50%; 
+  left: -50%;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(
+    45deg,
+  rgba(255, 0, 150, 0.4),
+  rgba(0, 255, 255, 0.4),
+  rgba(255, 255, 0, 0.4),
+  rgba(255, 0, 150, 0.4)
+  );
+  mix-blend-mode: color-dodge;
+  transform: translate(-100%, -100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+
+.holo-card:hover img {
+  transform: scale(1.05);
+}
+
+.holo-card:hover::after {
+  transform: translate(100%, 100%);
+}
+*/
+
 .pokedecks-category__data-wrapper::before {
   content: "";
   position: absolute;
