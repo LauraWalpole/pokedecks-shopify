@@ -113,12 +113,64 @@
   z-index: -1;
 }
 
-/*
 .holo-card {
   position: relative;
-  overflow: hidden;
-  display: inline-block;
-  cursor: pointer;
+    overflow: hidden;
+  z-index: 10;
+  box-shadow: 
+    -5px -5px 5px -5px var(--color1), 
+    5px 5px 5px -5px var(--color2), 
+    -7px -7px 10px -5px transparent, 
+    7px 7px 10px -5px transparent, 
+    0 0 5px 0px rgba(255,255,255,0),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.2s ease;
+  will-change: transform, filter;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transform-origin: center;
+}
+
+.holo-card:hover {
+  box-shadow: 
+    -20px -20px 30px -25px var(--color1), 
+    20px 20px 30px -25px var(--color2), 
+    -7px -7px 10px -5px var(--color1), 
+    7px 7px 10px -5px var(--color2), 
+    0 0 13px 4px rgba(255,255,255,0.3),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
+}
+
+.holo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 0) 30%,       /* fade-in transparent */
+    rgba(255, 0, 0, 0.5) 35%,     /* red */
+    rgba(255, 165, 0, 0.5) 40%,   /* orange */
+    rgba(255, 255, 0, 0.5) 45%,   /* yellow */
+    rgba(0, 255, 0, 0.5) 50%,     /* green */
+    rgba(0, 127, 255, 0.5) 55%,   /* blue */
+    rgba(139, 0, 255, 0.5) 60%,   /* violet */
+    rgba(255, 0, 0, 0.5) 65%,     /* red again */
+    rgba(255, 0, 0, 0) 70%        /* fade-out transparent */
+  );
+  background-size: 200% 200%; 
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.holo-card:hover::after {
+  opacity: 0.5;
+  animation: holo-wipe 0.8s linear forwards;
 }
 
 .holo-card img {
@@ -128,36 +180,20 @@
   transition: transform 0.4s ease;
 }
 
-
-.holo-card::after {
-  content: "";
-  position: absolute;
-  top: -50%; 
-  left: -50%;
-  width: 400%;
-  height: 400%;
-  background: linear-gradient(
-    45deg,
-  rgba(255, 0, 150, 0.4),
-  rgba(0, 255, 255, 0.4),
-  rgba(255, 255, 0, 0.4),
-  rgba(255, 0, 150, 0.4)
-  );
-  mix-blend-mode: color-dodge;
-  transform: translate(-100%, -100%);
-  transition: transform 0.8s ease;
-  pointer-events: none;
-}
-
-
 .holo-card:hover img {
   transform: scale(1.05);
 }
 
-.holo-card:hover::after {
-  transform: translate(100%, 100%);
+
+/* Animate diagonal movement */
+@keyframes holo-wipe {
+  0% {
+    background-position: -100% -100%;
+  }
+  100% {
+    background-position: 150% 150%;
+  }
 }
-*/
 
 .pokedecks-category__data-wrapper::before {
   content: "";

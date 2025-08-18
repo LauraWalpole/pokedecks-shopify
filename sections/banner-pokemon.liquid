@@ -5,9 +5,11 @@
   <div class="isolate page-width">
     {{ section.settings.section_color_scheme }}
     <div class="pokedecks-category__image-container-darkshadow holo-card">
+    <a href="/collections/{{ tcg.name | handle }}">
       <img
         src="{{ tcg.image | image_url: width: auto , height: auto }}"
       >
+      </a>
     </div>
     
   </div>
