@@ -10,9 +10,9 @@
         "type":"banner-pokemon"
     },
 
-    "banner-disneylorcana":
+    "banner-disneylorcana-clickable":
     {
-        "type":"banner-disneylorcana"
+        "type":"banner-disneylorcana-clickable"
     },
     "homepage-spotlight-collections":
     {
@@ -54,7 +54,7 @@
                 [
                     "homepage_intro",
                     "banner-pokemon",
-                    "banner-disneylorcana",
+                    "banner-disneylorcana-clickable",
                     "homepage-spotlight-collections",
                     "homepage-releasecalendar",
                     "featured_blog_MtcVwq",

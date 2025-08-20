@@ -4,8 +4,8 @@
       "type": "collection-page-image",
       "settings": {}
     },
-    "collection-page-banner": {
-      "type": "collection-page-banner",
+    "collection-page-banner-pkmn": {
+      "type": "collection-page-banner-pkmn",
       "settings": {}
     },
     "collection-page-list-pkmn": {
@@ -15,7 +15,7 @@
   },
   "order": [
     "collection-page-image",
-    "collection-page-banner",
+    "collection-page-banner-pkmn",
     "collection-page-list-pkmn"
   ]
 }
