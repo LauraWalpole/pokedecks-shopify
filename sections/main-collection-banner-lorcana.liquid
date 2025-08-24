@@ -145,7 +145,8 @@
             {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
             Disney Lorcana set.            
           </div>
-          <div class="collection-data-item"></div>
+
+          <div class="collection-data-item">{{ collection.description }}</div>
           <div class="collection-data-cell">
             <p class="collection-data-subtitle"><strong>Release date</strong></p>
              {% if collection.metafields.collection.release_date %}
