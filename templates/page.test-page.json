@@ -1,12 +1,8 @@
 {
     "sections":{
-    "banner-disneylorcana-static":{"type":"banner-disneylorcana-static"},
-    "collection-page-list-lorcana":{"type":"collection-page-list-lorcana","settings":{}},
     "main-collection-banner-lorcana":{"type":"main-collection-banner-lorcana"}
 },
     "order":[
-        "banner-disneylorcana-static",
-        "collection-page-list-lorcana",
         "main-collection-banner-lorcana"
         ]
     }
