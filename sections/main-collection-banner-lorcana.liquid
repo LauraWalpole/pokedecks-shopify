@@ -145,6 +145,9 @@
           <div class="collection-data-item">
             {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
             Disney Lorcana set.
+                          {%- if section.settings.show_collection_description -%}
+          <p>{{ collection.description }}</p>
+        {%- endif -%}
 
 
           </div>
