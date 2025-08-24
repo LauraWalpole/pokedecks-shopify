@@ -1,8 +1,10 @@
 {
     "sections":{
-    "main-collection-banner-lorcana":{"type":"main-collection-banner-lorcana"}
+    "main-collection-banner-lorcana":{"type":"main-collection-banner-lorcana"},
+    "main-list-collections": {"type":"main-list-collections"}
 },
     "order":[
-        "main-collection-banner-lorcana"
+        "main-collection-banner-lorcana",
+        "main-list-collections"
         ]
     }
