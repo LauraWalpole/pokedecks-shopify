@@ -146,6 +146,9 @@
             {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
             Disney Lorcana set.      
           </div>
+          {%- if section.settings.show_collection_description -%}
+          <div class="pokedecks-category__description">{{ collection.description }}</div>
+        {%- endif -%}
 
 
           <div class="collection-data-cell">
