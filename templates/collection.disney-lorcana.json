@@ -41,7 +41,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "{{ collection.metafields.custom.logo.value }}",
+        "image": "{{ collection.image }}",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",
