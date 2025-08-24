@@ -1,63 +1,150 @@
-{"sections":
-{
-    "homepage_intro":
-    {
-        "type":"homepage-intro",
-        "settings":{}
-    },
-    "banner-pokemon":
-    {
-        "type":"banner-pokemon"
-    },
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 
-    "banner-disneylorcana-clickable":
-    {
-        "type":"banner-disneylorcana-clickable"
+ {
+  "sections": {
+    "image_banner_iAHwGd": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_pCybLy": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ metaobjects.section_content[\"homepage-welcome\"].title.value }}",
+            "heading_size": "hxl"
+          }
+        },
+        "text_YR3zXH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ metaobjects.section_content[\"homepage-welcome\"].description.value }}",
+            "text_style": "body"
+          }
+        },
+        "buttons_XRG4Td": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now!",
+            "button_link_1": "shopify://collections/pokemon-tcg",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pCybLy",
+        "text_YR3zXH",
+        "buttons_XRG4Td"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Reshiram-WhiteFlare.jpg",
+        "image_overlay_opacity": 60,
+        "image_height": "adapt",
+        "image_behavior": "fixed",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
     },
-    "homepage-spotlight-collections":
-    {
-        "type":"homepage-spotlight-collections",
-        "settings":{}
+    "homepage-spotlight-collections": {
+      "type": "homepage-spotlight-collections",
+      "settings": {}
     },
-    "homepage-releasecalendar":
-    {
-        "type":"homepage-releasecalendar",
-        "settings":{}
+    "image_banner_gjVDh9": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Zekrom-BlackBolt.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "fixed",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
     },
-    "featured_blog_MtcVwq":
-    {
-        "type":"featured-blog",
-        "name":"t:sections.featured-blog.presets.name",
-        "settings":
-        {
-            "blog":"news",
-            "post_limit":3,
-            "heading":"",
-            "heading_size":"h1",
-            "columns_desktop":2,
-            "show_view_all":true,
-            "show_image":true,
-            "show_date":true,
-            "show_author":false,
-            "color_scheme":"scheme-1",
-            "padding_top":20,"padding_bottom":36
-            }
-            },
-            "homepage_statement_cards":
-            {
-                "type":"homepage-statement-cards",
-                "settings":
-                {}
-                }
-                },
-                "order":
-                [
-                    "homepage_intro",
-                    "banner-pokemon",
-                    "banner-disneylorcana-clickable",
-                    "homepage-spotlight-collections",
-                    "homepage-releasecalendar",
-                    "featured_blog_MtcVwq",
-                    "homepage_statement_cards"
-                    ]
-                }
+    "homepage-releasecalendar": {
+      "type": "homepage-releasecalendar",
+      "settings": {}
+    },
+    "homepage_statement_cards": {
+      "type": "homepage-statement-cards",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_banner_iAHwGd",
+    "homepage-spotlight-collections",
+    "image_banner_gjVDh9",
+    "homepage-releasecalendar",
+    "homepage_statement_cards"
+  ]
+}
+
+
+
+ /*
+{
+  "sections": {
+    "homepage_intro": {
+      "type": "homepage-intro",
+      "settings": {}
+    },
+    "homepage-spotlight-collections": {
+      "type": "homepage-spotlight-collections",
+      "settings": {}
+    },
+    "homepage-releasecalendar": {
+      "type": "homepage-releasecalendar",
+      "settings": {}
+    },
+    "featured_blog_MtcVwq": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "",
+        "heading_size": "h1",
+        "columns_desktop": 2,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    },
+    "homepage_statement_cards": {
+      "type": "homepage-statement-cards",
+      "settings": {}
+    }
+  },
+  "order": [
+    "homepage_intro",
+    "homepage-spotlight-collections",
+    "homepage-releasecalendar",
+    "featured_blog_MtcVwq",
+    "homepage_statement_cards"
+  ]
+}
+*/ 
