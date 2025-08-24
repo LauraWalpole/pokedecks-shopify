@@ -144,12 +144,13 @@
           </div>
           <div class="collection-data-item">
             {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
-            Disney Lorcana set.      
-          </div>
-          {%- if section.settings.show_collection_description -%}
-          <p>class="pokedecks-category__description">{{ collection.description }}</p>
+            Disney Lorcana set.
+              {%- if section.settings.show_collection_description -%}
+          <p class="pokedecks-category__description">{{ collection.description }}</p>
         {%- endif -%}
 
+          </div>
+          
 
           <div class="collection-data-cell">
             <p class="collection-data-subtitle"><strong>Release date</strong></p>
