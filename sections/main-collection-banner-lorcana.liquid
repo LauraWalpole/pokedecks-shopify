@@ -1,0 +1,311 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
+
+{%- assign colour_one = collection.metafields.collection.colour_one | default: '#eacfc6' -%}
+{%- assign colour_two = collection.metafields.collection.colour_two | default: '#d6e1e6' -%}
+
+{%- style -%}
+    @media screen and (max-width: 749px) {
+      .pokedecks-category--with-image .pokedecks-category__inner {
+        padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+      }
+    }
+
+    /* Pseudo-element used for gradient border */
+  .pokedecks-category__data-wrapper::before{
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, {{colour_one}}, {{colour_two}} );
+    z-index: -2;
+  }
+
+
+.hero-fullwidth {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: top center;
+  -webkit-mask-image: linear-gradient(black, transparent);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(black, transparent);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+ 
+}
+
+.foreground-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  margin: 0 0 ;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+.flex-row-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.text-content-container{
+  width: 100%;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .hero-fullwidth {
+    height: auto; 
+    min-height: 50vh;
+  }
+
+  .hero-image {
+    max-width: 80%; 
+  }
+
+  .text-content-container {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 70%; 
+
+  .text-content-container {
+    font-size: 0.85rem;
+  }
+}
+}
+
+
+{%- endstyle -%}
+
+
+
+
+
+<section class="hero-fullwidth">
+  <div class="hero-background">
+    <img class="background-image" src="https://cdn.shopify.com/s/files/1/0903/9629/5493/files/DisneyLorcana-Fabled-SetImage.jpg?v=1755793328">
+  </div>
+  <div class="foreground-container">
+    <div class="flex-row-center">
+      <img class="hero-image" src="/cdn/shop/files/Disneylorcanalogo-Fabled.png">
+    </div>
+      <div class="flex-row-center">
+    <div class="text-content-container">
+        <div class="pokedecks-category__data-wrapper">
+        <div class="collection-data-grid">
+          <div class="collection-data-item">
+            <h2 class="collection-data-title">{{ collection.headline }}</h2>
+          </div>
+          <div class="collection-data-item">
+            {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
+            Disney Lorcana set.
+            {%- if section.settings.show_collection_description -%}
+              <div class="pokedecks-category__description">{{ collection.description }}</div>
+            {% endif %}
+          </div>
+          <div class="collection-data-item"></div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Release date</strong></p>
+             {% if collection.metafields.collection.release_date %}
+              <p class="collection-data-value">{{ collection.metafields.collection.release_date | metafield_tag }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+          </div>
+          <div class="collection-data-item"></div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Total card count</strong></p>
+            {% if collection.metafields.collection.total_cards.value  %}
+              <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+  {% comment %}
+   Add if logic to show image for collection 
+   {%- if section.settings.show_collection_image and collection.image -%}
+    Replace hardcoded image with reference to collection image
+    {{ collection.image | image_url: width: auto, height: auto  }}
+
+  {% endcomment %}
+
+  {% comment %}
+   <section>
+   <div class= "hero-banner__tcg-set">
+    <div class= "grid-container">
+    <img class= "collection-hero__image" src="https://cdn.shopify.com/s/files/1/0903/9629/5493/files/DisneyLorcana-Fabled-SetImage.jpg?v=1755793328" alt="Collection image">
+    <img class="collection-hero__logo" src="/cdn/shop/files/Disneylorcanalogo-Fabled.png">
+    <div class="isolate page-width">
+    <div class="pokedecks-category__content-wrapper">
+      <div class="pokedecks-category__data-wrapper">
+        <div class="collection-data-grid">
+          <div class="collection-data-item">
+            <h2 class="collection-data-title">{{ collection.headline }}</h2>
+          </div>
+          <div class="collection-data-item">
+            {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
+            Disney Lorcana set.
+            {%- if section.settings.show_collection_description -%}
+              <div class="pokedecks-category__description">{{ collection.description }}</div>
+            {% endif %}
+          </div>
+          <div class="collection-data-item"></div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Release date</strong></p>
+             {% if collection.metafields.collection.release_date %}
+              <p class="collection-data-value">{{ collection.metafields.collection.release_date | metafield_tag }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+          </div>
+          <div class="collection-data-item"></div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Total card count</strong></p>
+            {% if collection.metafields.collection.total_cards.value  %}
+              <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    </div>
+  </section>
+
+  {% endcomment %}
+
+
+  {% comment %}
+    Existing code
+
+
+<section class="section-light-grey">
+  <div class="isolate page-width">
+    <div class="pokedecks-category__content-wrapper">
+      <div class="pokedecks-category__data-wrapper">
+        <div class="collection-data-grid">
+          <div class="collection-data-item">
+            <h2 class="collection-data-title">{{ collection.headline }}</h2>
+          </div>
+          <div class="collection-data-item">
+            {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
+            Disney Lorcana set.
+            {%- if section.settings.show_collection_description -%}
+              <div class="pokedecks-category__description">{{ collection.description }}</div>
+            {% endif %}
+          </div>
+          <div class="collection-data-item"></div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Release date</strong></p>
+             {% if collection.metafields.collection.release_date %}
+              <p class="collection-data-value">{{ collection.metafields.collection.release_date | metafield_tag }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+          </div>
+          <div class="collection-data-item"></div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Total card count</strong></p>
+            {% if collection.metafields.collection.total_cards.value  %}
+              <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  {% endcomment %}
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

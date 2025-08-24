@@ -1,0 +1,22 @@
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
+{% assign tcg = metaobjects.tcg.disney-lorcana %}
+
+<section class="section-white">
+  <div class="isolate page-width">
+    <div class="pokedecks-category__image-container-darkshadow holo-card">
+    
+      <img src="{{ tcg.image | image_url: width: auto , height: auto }}">
+    
+    </div>
+  </div>
+</section>
+
+
+
+
+{% schema %}
+  {
+    "name": "banner-lorcana",
+    "settings": []
+  }
+{% endschema %}

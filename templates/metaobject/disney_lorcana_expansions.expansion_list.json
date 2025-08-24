@@ -1,0 +1,12 @@
+{
+  "sections": {
+   
+    "collection-page-list-lorcana": {
+      "type": "collection-page-list-lorcana",
+      "settings": {}
+    }
+  },
+  "order": [
+     "collection-page-list-lorcana"
+  ]
+}
