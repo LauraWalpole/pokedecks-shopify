@@ -9,8 +9,8 @@
  */
 {
   "sections": {
-    "main-collection-banner-lorcana": {
-      "type": "main-collection-banner-lorcana",
+    "collection-banner-lorcana-set": {
+      "type": "collection-banner-lorcana-set",
       "settings": {
         "show_collection_description": true,
         "show_collection_image": true,
@@ -39,7 +39,7 @@
     },
   },
   "order": [
-    "main-collection-banner-lorcana",
+    "collection-banner-lorcana-set",
     "main-collection-product-grid"
   ]
 }
