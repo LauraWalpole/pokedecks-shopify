@@ -16,12 +16,8 @@
         "padding_bottom": 36
       }
     },
-    "collection-list": {
-      "type": "collection-list"
-    }
   },
   "order": [
-    "collection-banner-pokemon-expansion",
-    "collection-list"
+    "collection-banner-pokemon-expansion"
   ]
 }

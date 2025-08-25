@@ -56,13 +56,14 @@
   padding: 1rem;
   max-width: 75%;
   box-sizing: border-box;
+  top: 0;
 }
 
 .flex-row-center{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
 }
 

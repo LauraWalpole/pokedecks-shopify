@@ -17,29 +17,8 @@
         "color_scheme": "scheme-1"
       }
     },
-    "main-collection-product-grid": {
-      "type": "main-collection-product-grid",
-      "settings": {
-        "products_per_page": 20,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "enable_filtering": false,
-        "filter_type": "horizontal",
-        "enable_sorting": false,
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
   },
   "order": [
-    "collection-banner-lorcana-set",
-    "main-collection-product-grid"
+    "collection-banner-lorcana-set"
   ]
 }

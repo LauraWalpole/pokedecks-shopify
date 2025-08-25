@@ -213,16 +213,6 @@
   z-index: -1;
 }
 
-/*
-
-.collection-data-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 1rem;
-}
-
-*/
 
 .collection-data-grid {
   display: flex;
