@@ -54,7 +54,7 @@
   margin: 0 0 ;
   gap: 2rem;
   padding: 1rem;
-  max-width: 40%;
+  max-width: 75%;
   box-sizing: border-box;
 }
 
@@ -63,6 +63,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: fit-content;
 }
 
 .hero-image {
@@ -82,12 +83,25 @@
     min-height: 50vh;
   }
 
+  .foreground-container {
+    width: 90%;
+    max-width: 100%;
+    position: relative;
+  }
+
   .hero-image {
-    max-width: 90%; 
+    max-width: 90%;
+
   }
 
   .text-content-container {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    width:100%;
+
+  }
+
+  .collection-data-cell {
+    margin-top: 5px;
   }
 }
 

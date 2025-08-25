@@ -1,5 +1,6 @@
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 
 {%- assign colour_one = collection.metafields.collection.colour_one | default: '#ff0000' -%}
 {%- assign colour_two = collection.metafields.collection.colour_two | default: '#0000ff' -%}
@@ -59,7 +60,7 @@
             {{ collection.metafields.custom.expansion_type.value }} expansion in the
             {{ collection.metafields.custom.type }}: {{ collection.metafields.custom.era.value }} series.
           </div>
-          <div class="collection-data-item"></div>
+  
           <div class="collection-data-cell">
             <p class="collection-data-subtitle"><strong>Release date</strong></p>
             <p class="collection-data-value">
@@ -72,7 +73,7 @@
               {{ collection.metafields.collection.pkmn_japanese_equivalent | metafield_tag }}
             </p>
           </div>
-          <div class="collection-data-item"></div>
+
           <div class="collection-data-cell">
             <p class="collection-data-subtitle"><strong>Total card count</strong></p>
             <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>

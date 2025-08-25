@@ -2,8 +2,8 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 
-{%- assign colour_one = collection.metafields.collection.colour_one | default: '#eacfc6' -%}
-{%- assign colour_two = collection.metafields.collection.colour_two | default: '#d6e1e6' -%}
+{%- assign colour_one = collection.metafields.collection.colour_one | default: '#479bc9' -%}
+{%- assign colour_two = collection.metafields.collection.colour_two | default: '#5c6165' -%}
 
 {%- style -%}
 
@@ -11,39 +11,106 @@
     background: linear-gradient(45deg, {{colour_one}}, {{colour_two}} );
   }
 
+  .pokedecks-category__data-wrapper::after {
+  background: #000;
+  opacity: 0.5;
+ 
+}
+
+ .collection-data-cell {
+    background: #000;
+  }
+
 {%- endstyle -%}
-
-
-
-
 
 <section class="hero-fullwidth">
   <div class="hero-background">
-    <img class="background-image" src="{{ collection.image | image_url: width: 1920, height: 1080 }} " width= 100% height= 100%/>
-
+    {% comment %}
+    <img class="background-image" src="{{ collection.image | image_url: width: 1920, height: 1080 }} " width= 100% height= 100%/>  
+    {% endcomment %}
+    <img class="background-image" src="https://cdn.shopify.com/s/files/1/0903/9629/5493/files/Zekrom-BlackBolt.jpg?v=1755795705" width= 100% height= 100%/>
+    
   </div>
   <div class="foreground-container">
     <div class="flex-row-center">
+        {% comment %}
       <img
           src="{{ collection.metafields.custom.logo.value | image_url: width: 450, height: 450 }}"
           width= 100%
           height= 100%
-        />
+        />    
+        {% endcomment %}
+      <img src="https://cdn.shopify.com/s/files/1/0903/9629/5493/files/pokemon-megaevolution-logo.png?v=1756153132" width= 100% height= 100%/>
     </div>
       <div class="flex-row-center">
     <div class="text-content-container">
         <div class="pokedecks-category__data-wrapper">
         <div class="collection-data-grid">
           <div class="collection-data-item">
+            {% comment %}
             <h2 class="collection-data-title">{{ collection.metafields.collection.headline }}</h2>
+            {% endcomment %}
+            <h2 class="collection-data-title"> Headline text</h2>
+          </div>
+          {% comment %}
+          <div class="collection-data-item">
+             {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
+            {{ collection.metafields.custom.expansion_type.value }} expansion in the
+            {{ collection.metafields.custom.type }}: {{ collection.metafields.custom.era.value }} series.
+          </div>  
+          {% endcomment %}
+           <div class="collection-data-item">
+           Mega Evolution is the first main series expansion in the Pokemon TCG: Mega Evolution series.
+          </div>
+  
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Release date</strong></p>
+            <p class="collection-data-value">
+                {% comment %}
+                  {{ collection.metafields.collection.release_date | metafield_tag }}
+                {% endcomment %}
+              
+            </p>
+          </div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Japanese expansions</strong></p>
+            <p class="collection-data-value"> Mega Evolution Japanese
+              {% comment %}
+                {{ collection.metafields.collection.pkmn_japanese_equivalent | metafield_tag }}
+              {% endcomment %}  
+            </p>
+          </div>
+
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Total card count</strong></p>
+            <p class="collection-data-value"> 186
+            {% comment %}
+            {{ collection.metafields.collection.total_cards.value }}
+            {% endcomment %}
+             </p>  
+            
+          </div>
+          <div class="collection-data-cell">
+            <p class="collection-data-subtitle"><strong>Secret rare cards</strong></p>
+            <p class="collection-data-value"> 54
+            {% comment %}
+            {{ collection.metafields.collection.pkmn_secret_rares.value }}
+            {% endcomment %}
+            </p>  
           </div>
           <div class="collection-data-item">
-            {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
-            Disney Lorcana set.
-
-
+            <p class="collection-data-subtitle"><strong>Chase cards</strong></p>
+            <p class="collection-data-value"> Card 1
+                Card 2
+                Card 3
+                Card 4
+            {% comment %}
+            {{ collection.metafields.collection.gameplay_mechanics | metafield_tag }}
+            {% endcomment %}
+                 </p>  
           </div>
-          
+
+          {% comment %}
 
           <div class="collection-data-cell">
             <p class="collection-data-subtitle"><strong>Release date</strong></p>
@@ -53,7 +120,7 @@
                 <p class="collection-data-value">TBC</p>
             {% endif %}
           </div>
-          <div class="collection-data-cell">
+                      <div class="collection-data-cell">
             <p class="collection-data-subtitle"><strong>Total card count</strong></p>
             {% if collection.metafields.collection.total_cards.value  %}
               <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
@@ -61,6 +128,10 @@
                 <p class="collection-data-value">TBC</p>
             {% endif %}
             </div>
+          {% endcomment %}
+          
+
+
           </div>
         </div>
       </div>
