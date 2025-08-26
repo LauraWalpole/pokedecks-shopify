@@ -194,11 +194,14 @@
   }
 }
 
+/* Styling for product collections */
+
 .pokedecks-category__data-wrapper::before {
   content: "";
   position: absolute;
   border-radius: 12px;
   z-index: -2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .pokedecks-category__data-wrapper::after {
@@ -209,7 +212,10 @@
   right: 0;
   bottom: 0;
   border-radius: 10px;
-  background: #0a2540;
+  border: 3px;
+  border-style: solid;
+  border-color: #000;
+  background: #FFF;
   z-index: -1;
 }
 
@@ -224,7 +230,7 @@
 .collection-data-title {
   text-align: center;
   margin: 0;
-  color: #ffffff;
+  color: #000;
 }
 
 .collection-data-value {
@@ -236,15 +242,20 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  color: #000;
 }
 
 .collection-data-cell {
-  grid-column: auto;
   border-radius: 10px;
-  background: #2c3a57;
+  background: #5D3F8D;
   padding: 5px;
   text-align: center;
   width: 100%;
+
+}
+
+.collection-data-text-content {
+  color:#FFF;
 }
 
 .collection-data-subtitle {

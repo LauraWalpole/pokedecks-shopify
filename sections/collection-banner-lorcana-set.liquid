@@ -1,4 +1,3 @@
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
@@ -32,19 +31,22 @@
 {%- style -%}
 
   .pokedecks-category__data-wrapper::before{
-    background: linear-gradient(45deg, {{colour_one}}, {{colour_two}} );
+    background: linear-gradient(45deg, {{ colour_one }}, {{colour_two}} );
   }
     .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  .pokedecks-category__data-wrapper::after {
+    border-color: (0,0,0,0.2);
+    background-color: #f0e8df;
   }
+
+  .collection-data-cell{
+    background-color: {{ colour_one }}
+  }
+
 
   .midground-container {
   position: relative; 
@@ -56,22 +58,19 @@
 .hero-fullwidth {
   position: relative;
   width: 100%;
-  /* let content define height; keep a minimum hero height */
   min-height: 65vh;
   height: auto;
-  /* remove this so the grid below isn't clipped */
   overflow: visible;
-  display: block; /* can be block or grid; content wrapper handles layout */
+  display: block; 
 }
 
 .foreground-container {
-  position: relative;         /* override previous absolute */
+  position: relative;         
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   text-align: center;
-  max-width: 75%;
   width: 100%;
   margin: 0 auto;
 }
@@ -79,17 +78,23 @@
 .hero-content {
   {
   position: relative;
-  z-index: 2;               /* sits above background */
-  display: grid;            /* two rows: foreground, then product grid */
+  z-index: 2;               
+  display: grid;            
   grid-template-rows: auto auto;
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;           /* center horizontally */
+  margin: 0 auto;           
   padding: 1rem;
   box-sizing: border-box;
 }
 }
+
+.product-card-wrapper .card {
+  box-shadow: {{ colour_one }};
+
+}
+
 
 {%- endstyle -%}
 
@@ -103,7 +108,8 @@
 
   </div>
   <!-- Container for logo and product grid -->
-  <div class="hero-content">
+  <div class="hero-content collection page-width">
+
 <!-- Row 1: Logo and collection info-->
     <div class="foreground-container">
     <div class="flex-row-center">
@@ -118,31 +124,37 @@
         <div class="pokedecks-category__data-wrapper">
         <div class="collection-data-grid">
           <div class="collection-data-item">
-            <h2 class="collection-data-title">{{ collection.metafields.collection.headline }}</h2>
+            <h1 class="collection-data-title">{{ collection.metafields.collection.headline }}</h1>
           </div>
           <div class="collection-data-item">
             {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
             Disney Lorcana set.
-
-
           </div>
+          <div class="collection-data-item">
+            {{ collection.description }}
+            </div>
           
           <div class="collection-data-item">
           <div class="collection-data-cell">
+            <div class="collection-data-text-content">
             <p class="collection-data-subtitle"><strong>Release date</strong></p>
+            
              {% if collection.metafields.collection.release_date %}
               <p class="collection-data-value">{{ collection.metafields.collection.release_date | metafield_tag }}</p>
               {% else %}
                 <p class="collection-data-value">TBC</p>
             {% endif %}
+            </div>
           </div>
           <div class="collection-data-cell">
+            <div class="collection-data-text-content">
             <p class="collection-data-subtitle"><strong>Total card count</strong></p>
             {% if collection.metafields.collection.total_cards.value  %}
               <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
               {% else %}
                 <p class="collection-data-value">TBC</p>
             {% endif %}
+            </div>
             </div>
 
             </div>
@@ -316,20 +328,8 @@
 
 
     </div>
-  
-
-
-
-
-
-
-     
-      
     </section>
 
-    {% comment %}
-      Main collection product grid
-    {% endcomment %}
 
 
 
@@ -374,6 +374,7 @@
         }
       ]
     },
+    /*
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -381,6 +382,7 @@
       "info": "t:sections.all.colors.has_cards_info",
       "default": "scheme-1"
     },
+    */
     {
       "type": "header",
       "content": "t:sections.main-collection-product-grid.settings.header__3.content"
