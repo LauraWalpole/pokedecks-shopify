@@ -1,15 +1,37 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- unless section.settings.quick_add == 'none' -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+{%- endunless -%}
+
+{%- if section.settings.quick_add == 'standard' -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- if section.settings.quick_add == 'bulk' -%}
+  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
 {%- assign colour_one = collection.metafields.collection.colour_one | default: '#F55B20' -%}
 {%- assign colour_two = collection.metafields.collection.colour_two | default: '#791936' -%}
-{%- assign  background_colour = collection.metafields.custom.light_colour | default: '#f0e8df'%}
 
 
 {%- style -%}
 
-  .pokedecks-category__data-wrapper::before{
+.pokedecks-category__data-wrapper::before{
     background: linear-gradient(45deg, {{ colour_one }}, {{colour_two}} );
   }
     .section-{{ section.id }}-padding {
@@ -19,7 +41,7 @@
 
   .pokedecks-category__data-wrapper::after {
     border-color: (0,0,0,0.2);
-    background-color: {{background_colour}};
+    background-color: #f0e8df;
   }
 
   .collection-data-cell{
@@ -69,23 +91,16 @@
 }
 }
 
-.product-card-wrapper .card {
-  box-shadow: {{ colour_one }};
 
-}
 {%- endstyle -%}
 
 
 
 <section class="hero-fullwidth">
   <div class="hero-background">
-    <!--Remove -->
-    <img class="background-image" src= "https://cdn.shopify.com/s/files/1/0903/9629/5493/files/Zekrom-BlackBolt.jpg?v=1755795705" width= 100% height= 100%/>
-
-    <!-- 
+    
     <img class="background-image" src="{{ collection.image | image_url: width: 1920, height: 1080 }} " width= 100% height= 100%/>
-  -->
-
+  
   </div>
   <!-- Container for logo and product grid -->
   <div class="hero-content collection page-width">
@@ -93,16 +108,12 @@
 <!-- Row 1: Logo and collection info-->
     <div class="foreground-container">
       <div class="flex-row-center">
-        <!-- Remove -->
-        <img src= "https://cdn.shopify.com/s/files/1/0903/9629/5493/files/pokemon-megaevolution-logo.png?v=1756153132" width= 100% height= 100%/>
-      <!-- 
+
       <img
           src="{{ collection.metafields.custom.logo.value | image_url: width: 450, height: 450 }}" 
           width= 100%
           height= 100%
-        />
-        -->
-    
+        />    
       
     </div>
       <div class="flex-row-center">
@@ -111,19 +122,17 @@
         <div class="collection-data-grid">
           <div class="collection-data-item">
             <h1 class="collection-data-title">
-              <!-- {{ collection.metafields.collection.headline }} -->
-              Headline value
+              {{ collection.metafields.collection.headline }}
             </h1>
           </div>
           <div class="collection-data-item">
-            This is the fourth set in the x series
-            <!-- {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
+
+            {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
             {{ collection.metafields.custom.expansion_type.value }} expansion in the
-            {{ collection.metafields.custom.type }}: {{ collection.metafields.custom.era.value }} series. -->
+            {{ collection.metafields.custom.type }}: {{ collection.metafields.custom.era.value }} series.
           </div>
           <div class="collection-data-item">
-           <!-- {{ collection.description }} -->
-           Red-hot embers illuminate the pitch-black night and sparks flare into an inferno as Charizard ex surges forth with newfound powers of darkness! The glittering Terastal phenomenon imbues some Pokémon ex like Tyranitar, Eiscue, and Vespiquen with different types than usual, while Dragonite ex and Greedent ex show mastery of their own inner strengths. Not to be outdone, Revavroom ex, Melmetal ex, and more Pokémon promise to change the course of battle in the Scarlet &amp; Violet—Obsidian Flames expansion!
+         {{ collection.description }} 
             </div>
           
           <div class="collection-data-item">
@@ -188,21 +197,16 @@
                 </div>
 
               </div>
-
+              {% if collection.metafields.collection.gameplay_mechanics %}
             <div class="collection-data-item">
             <p class="collection-data-subtitle"><strong>Chase cards</strong></p>
             <p class="collection-data-value">
-              {% if collection.metafields.collection.gameplay_mechanics %}
+
               {{ collection.metafields.collection.gameplay_mechanics | metafield_tag }}
-              {% else %}
-                Item 1
-                Item 2
-                Item 3
-              {% endif %}
+
             </p>
           </div>
-
-              
+              {% endif %}
           </div>
         </div>
       </div>
@@ -210,10 +214,10 @@
     </div>
     <!-- Row 2: Products -->
 
-           <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+    <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   
   
-        {%- paginate collection.products by section.settings.products_per_page -%}
+    {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
       <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
