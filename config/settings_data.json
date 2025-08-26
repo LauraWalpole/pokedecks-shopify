@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/PokeDecksLogo-Text_pink-purple.png",
-    "logo_width": 100,
+    "logo": "shopify://shop_images/PokeDecksLogo-Text-Light_pink-purple.png",
+    "logo_width": 160,
     "favicon": "shopify://shop_images/PokeDecksLogo-Light-Circle_0a0dc35f-7a45-42e6-8eca-7eaa9e0b396c.png",
     "type_header_font": "roboto_n4",
     "heading_scale": 120,
