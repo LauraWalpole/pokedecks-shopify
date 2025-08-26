@@ -4,6 +4,7 @@
 
 {%- assign colour_one = collection.metafields.collection.colour_one | default: '#F55B20' -%}
 {%- assign colour_two = collection.metafields.collection.colour_two | default: '#791936' -%}
+{%- assign  background_colour = collection.metafields.custom.light_colour | default: '#f0e8df'%}
 
 
 {%- style -%}
@@ -18,7 +19,7 @@
 
   .pokedecks-category__data-wrapper::after {
     border-color: (0,0,0,0.2);
-    background-color: #f0e8df;
+    background-color: {{background_colour}};
   }
 
   .collection-data-cell{
@@ -117,7 +118,8 @@
           <div class="collection-data-item">
             This is the fourth set in the x series
             <!-- {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
-            Disney Lorcana set. -->
+            {{ collection.metafields.custom.expansion_type.value }} expansion in the
+            {{ collection.metafields.custom.type }}: {{ collection.metafields.custom.era.value }} series. -->
           </div>
           <div class="collection-data-item">
            <!-- {{ collection.description }} -->
@@ -129,25 +131,78 @@
             <div class="collection-data-text-content">
             <p class="collection-data-subtitle"><strong>Release date</strong></p>
             
-             {% if collection.metafields.collection.release_date %}
-              <p class="collection-data-value">{{ collection.metafields.collection.release_date | metafield_tag }}</p>
+             
+              <p class="collection-data-value">
+                {% if collection.metafields.collection.release_date %}
+                {{ collection.metafields.collection.release_date | metafield_tag }}
               {% else %}
-                <p class="collection-data-value">TBC</p>
-            {% endif %}
+                TBC
+              {% endif %}
+              </p>
             </div>
           </div>
           <div class="collection-data-cell">
             <div class="collection-data-text-content">
             <p class="collection-data-subtitle"><strong>Total card count</strong></p>
-            {% if collection.metafields.collection.total_cards.value  %}
-              <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
+            
+              <p class="collection-data-value">
+                {% if collection.metafields.collection.total_cards.value  %}
+                {{ collection.metafields.collection.total_cards.value }}
               {% else %}
-                <p class="collection-data-value">TBC</p>
-            {% endif %}
+                TBC
+                {% endif %}
+              </p>            
             </div>
             </div>
 
             </div>
+
+            <div class="collection-data-item">
+              <div class="collection-data-cell">
+                <div class="collection-data-text-content">
+
+                  <p class="collection-data-subtitle"><strong>Japanese expansions</strong></p>
+                  <p class="collection-data-value">
+                    {% if collection.metafields.collection.pkmn_japanese_equivalent %}
+                    {{ collection.metafields.collection.pkmn_japanese_equivalent | metafield_tag }}
+                    {% else %}
+                      TBC
+                    {% endif %}
+                  </p>
+
+                </div>
+                </div>
+
+                <div class="collection-data-cell">
+                <div class="collection-data-text-content">
+                  <p class="collection-data-subtitle"><strong>Secret Rare Cards</strong></p>
+                  <p class="collection-data-value">
+                  {% if collection.metafields.collection.pkmn_secret_rares %}
+                    {{ collection.metafields.collection.pkmn_secret_rares }}
+                  {% else %}
+                    TBC
+                  {% endif %}                  
+                  </p>
+
+                </div>
+                </div>
+
+              </div>
+
+            <div class="collection-data-item">
+            <p class="collection-data-subtitle"><strong>Chase cards</strong></p>
+            <p class="collection-data-value">
+              {% if collection.metafields.collection.gameplay_mechanics %}
+              {{ collection.metafields.collection.gameplay_mechanics | metafield_tag }}
+              {% else %}
+                Item 1
+                Item 2
+                Item 3
+              {% endif %}
+            </p>
+          </div>
+
+              
           </div>
         </div>
       </div>
