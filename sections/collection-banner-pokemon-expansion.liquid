@@ -27,6 +27,7 @@
 
 {%- assign colour_one = collection.metafields.collection.colour_one | default: '#F55B20' -%}
 {%- assign colour_two = collection.metafields.collection.colour_two | default: '#791936' -%}
+{%- assign background = collection.metafields.custom.light_colour | default: '#FFFFFF' -%}
 
 
 {%- style -%}
@@ -41,7 +42,7 @@
 
   .pokedecks-category__data-wrapper::after {
     border-color: (0,0,0,0.2);
-    background-color: #f0e8df;
+    background-color:{{ background }}
   }
 
   .collection-data-cell{
@@ -90,7 +91,6 @@
   box-sizing: border-box;
 }
 }
-
 
 {%- endstyle -%}
 
