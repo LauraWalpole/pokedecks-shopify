@@ -9,15 +9,11 @@
  */
 {
   "sections": {
-    "collection-banner-pokemon-expansion": {
-      "type": "collection-banner-pokemon-expansion",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
+    "metaobject-tcgs": {
+      "type": "metaobject-tcgs"
     },
   },
   "order": [
-    "collection-banner-pokemon-expansion"
+    "metaobject-tcgs"
   ]
 }
