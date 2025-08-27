@@ -113,7 +113,7 @@
   z-index: -1;
 }
 
-.holo-card {
+.-card {
   position: relative;
     overflow: hidden;
   z-index: 10;
@@ -132,7 +132,7 @@
   transform-origin: center;
 }
 
-.holo-card:hover {
+.-card:hover {
   box-shadow: 
     -20px -20px 30px -25px var(--color1), 
     20px 20px 30px -25px var(--color2), 
@@ -142,7 +142,7 @@
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
 }
 
-.holo-card::after {
+.-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -168,24 +168,24 @@
   transition: opacity 0.2s ease;
 }
 
-.holo-card:hover::after {
+.-card:hover::after {
   opacity: 0.5;
-  animation: holo-wipe 0.8s linear forwards;
+  animation: -wipe 0.8s linear forwards;
 }
 
-.holo-card img {
+.-card img {
   display: block;
   width: 100%;
   height: auto;
   transition: transform 0.4s ease;
 }
 
-.holo-card:hover img {
+.-card:hover img {
   transform: scale(1.05);
 }
 
 
-@keyframes holo-wipe {
+@keyframes -wipe {
   0% {
     background-position: -100% -100%;
   }
