@@ -9,11 +9,11 @@
  */
 {
   "sections": {
-    "metaobject-tcgs": {
-      "type": "metaobject-tcgs"
+    "metaobject-tcgs-hovercard": {
+      "type": "metaobject-tcgs-hovercard"
     },
   },
   "order": [
-    "metaobject-tcgs"
+    "metaobject-tcgs-hovercard"
   ]
 }

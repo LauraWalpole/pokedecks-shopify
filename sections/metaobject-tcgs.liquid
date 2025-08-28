@@ -72,13 +72,16 @@
 
 <div class="flex-grid page-width">
   {% for tcg in tcg_list %}
-    <div class="tcg-card">
+    <div class="tcg-card" >
+
        <img
           class="horizontal-card-image"
           src="{{ tcg.image | image_url: width: '750', height: '500'  }}"
           width=100%
           height=100%
-        >
+        />
+
     </div>
+
   {% endfor %}
 </div>
