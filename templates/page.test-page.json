@@ -9,11 +9,11 @@
  */
 {
   "sections": {
-    "metaobject-tcgs-hovercard": {
-      "type": "metaobject-tcgs-hovercard"
+    "tilt-background": {
+      "type": "tilt-background"
     },
   },
   "order": [
-    "metaobject-tcgs-hovercard"
+    "tilt-background"
   ]
 }
