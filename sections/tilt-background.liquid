@@ -29,6 +29,7 @@
 .container-with-pattern{
   background: #1c1e2f;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 
@@ -104,7 +105,12 @@
 }
 
 .text-container {
-    opacity: 1; 
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   height: 100%;
 }
 
 .card__title {
@@ -130,6 +136,22 @@
 .content_column {
       background: #1c1e2f ;
 
+
+
+}
+
+.section-title-dark__center {
+  text-align:center;
+}
+
+.divider-slanted-down{
+  width: 100%;
+  height: 200px;
+  background: #2c3a57;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+  padding-bottom: 120px;
+  border-bottom: 10px;
+  border-style: solid;
 }
 
 
@@ -159,11 +181,9 @@ style="background: linear-gradient(-45deg, {{ secondary_colour }}  0%, {{ primar
 style="background: linear-gradient(-45deg, {{ secondary_colour }} 0%, #ffffff 50%, {{ primary_colour }} 100%);">
 <div class= "card-content-inner">
 <div class="text-container">
-    <p class="card__title">Card Title</p>
-    <p class="card__description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco.
+    <h1 class="section-title-dark__center">{{ tcg.headline }}</h1>
+    <p class="section-description-dark">
+      {{ tcg.description }}
     </p>
     </div>
 </div>
@@ -172,6 +192,8 @@ style="background: linear-gradient(-45deg, {{ secondary_colour }} 0%, #ffffff 50
 </div>
 </div>
 </div>
+<div class="divider-slanted-down">
+  </div>
 
   {% endfor %}
     </section>
