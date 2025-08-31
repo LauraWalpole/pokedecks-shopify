@@ -48,7 +48,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Reshiram-WhiteFlare.jpg",
-        "image_overlay_opacity": 0,
+        "image_overlay_opacity": 60,
         "image_height": "adapt",
         "image_behavior": "fixed",
         "desktop_content_position": "middle-left",
@@ -62,8 +62,8 @@
 
     },
 
-    "tilt-background": {
-      "type": "tilt-background"
+    "test-section": {
+      "type": "test-section"
     },
 
     
@@ -95,7 +95,7 @@
   },
   "order": [
     "image_banner_iAHwGd",
-    "tilt-background",
+    "test-section",
     "image_banner_gjVDh9",
     "homepage-releasecalendar",
     "homepage_statement_cards"

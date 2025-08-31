@@ -9,11 +9,11 @@
  */
 {
   "sections": {
-    "tilt-background": {
-      "type": "tilt-background"
+    "test-section": {
+      "type": "test-section"
     },
   },
   "order": [
-    "tilt-background"
+    "test-section"
   ]
 }

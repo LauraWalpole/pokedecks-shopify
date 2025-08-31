@@ -14,14 +14,15 @@
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-  --color-primary-purple: #603ec8;
-  --color-primary-pink: #d14391;
-  --color-primary-teal: #46d5bf;
-  --color-secondary-dark: #0a254;
-  --color-secondary-mid-grey: #2c3a57;
-  --color-secondary-grey: #8c9eb1;
-  --color-secondary-light-grey: #f6f9fc;
-  --color-bright-yellow: #fedcda;
+
+  --pokedecks-primary-purple: #603ec8;
+  --pokedecks-primary-pink: #d14391;
+  --pokedecks-secondary-teal: #46d5bf;
+  --pokedecks-secondary-dark: #1c1e2f;
+  --pokedecks-secondary-mid: #2c3a57;
+  --pokedecks-secondary-light: #8c9eb1; 
+  --pokedecks-secondary-xtralight: #f6f9fc;
+  --color-bright-yellow: #fadc36;
   --color-bright-pink: #dd5789;
   --color-bright-purple: #7a2c9e;
   --gradient-tropical-1: linear-gradient(
@@ -30,7 +31,13 @@
     #dd5789 49%,
     #fadc36 87%
   );
+
+  --pattern-1: url('https://cdn.shopify.com/s/files/1/0903/9629/5493/files/pattern-geometric-1.png?v=1756404257') repeat;
+
+  --global-corner-radius: 8px;
 }
+
+
 
 .product-card-wrapper .card,
 .contains-card--product {
@@ -98,7 +105,286 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
-/* base */
+
+/* Custom base */
+
+.section-padded {
+  padding: 40px 0;
+}
+
+
+.custom-container {
+  padding: 75px 0;
+}
+
+.custom-divider--bottom-slanted-down-1 {
+clip-path: polygon(100% 100%, 100% 0, 0 0);
+}
+
+.custom-divider--bottom-slanted-down {
+clip-path: polygon(100% 0, 0 0 , 100% 100%, 0 20px);
+}
+
+.custom-divider--right-angle-tri-top-left-full {
+clip-path: polygon(0 100%, 100% 0, 0 0);
+}
+
+
+.custom-divider--right-angle-tri-top-left {
+clip-path: polygon(0 100%, 70% 0, 0 0);
+}
+
+.custom-divider--right-angle-tri-top-right {
+clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.custom-divider--right-angle-tri-bottom-left-full {
+clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.custom-divider--right-angle-tri-bottom-left {
+clip-path: polygon(0 0, 20% 100%, 100% 100%);
+}
+
+.custom-divider--right-angle-tri-bottom-right-full {
+clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.custom-divider--right-angle-tri-bottom-right {
+clip-path: polygon(100% 0, 20% 100%, 100% 100%);
+}
+
+
+.custom-divider--rhombus-centred {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.custom-divider--nonogram {
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 59% 50%, 100% 70%, 50% 100%, 0 70%, 40% 50%);
+}
+
+.custom-divider {
+  position: absolute;
+  z-index:1;
+}
+
+.custom-divider--slim {
+    height: 20px;
+}
+
+.custom-divider--tall {
+  height: 50px;
+}
+
+.custom-divider--wide {
+ width: 100%;
+}
+
+.custom-divider--narrow {
+width: 50%
+}
+
+.custom-divider-background {  
+  position: relative;
+  width: 100%;
+  height: 20px;
+
+}
+
+.custom-divider-background--dark {
+background: var(--pokedecks-secondary-dark)
+}
+
+.custom-divider-background--mid {
+background: var(--pokedecks-secondary-mid)
+
+}
+
+.custom-divider--dark-grey {
+  background: var(--pokedecks-secondary-dark);
+
+}
+
+.custom-divider--mid-grey {
+  background: var(--pokedecks-secondary-mid);
+
+}
+
+.custom-divider--light-grey {
+  background: var(--pokedecks-secondary-light);
+}
+
+.custom-divider--tropical-gradient {
+background: linear-gradient(
+    45deg,
+    var(--pokedecks-primary-purple) 11%,
+    var(--pokedecks-primary-pink) 49%,
+  var(--color-bright-yellow) 87%);
+}
+
+.custom-divider--purple {
+  background: var(--pokedecks-primary-purple);
+}
+
+.custom-divider--pink {
+  background: var(--pokedecks-primary-pink);
+}
+
+.custom-section-pattern-1  {
+  background-size: auto,cover;
+  height: auto;
+  width: 100%;
+  padding: 0;
+}
+
+.custom-section-pattern-1::before{
+  content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--pattern-1);
+    background-size: auto, cover;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+.custom-section-pattern-1--dark {
+    background: var(--pokedecks-secondary-dark);
+}
+
+.custom-section-pattern-1--mid {
+    background: var(--pokedecks-secondary-mid);
+}
+
+.custom-section-pattern-1--light {
+  background: var(--pokedecks-secondary-light)
+}
+
+.custom-image-container{ 
+  position: relative;
+  z-index: 1;
+  border-radius: var(--global-corner-radius);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: fit-content;
+  width: fit-content;
+  padding: 0;
+}
+
+.custom-image-container--border{
+  box-shadow: 10px 10px var(--pokedecks-secondary-mid);
+  border: 3px;
+  border-style: solid;
+  border-color: #000;
+  border-radius: var(--global-corner-radius);
+}
+
+.custom-image-container--shadow-mid-grey{
+  box-shadow: 10px 10px var(--pokedecks-secondary-mid);
+}
+
+.custom-image-container--shadow-dark-grey{
+  box-shadow: 10px 10px var(--pokedecks-secondary-dark);
+}
+
+.custom-image-container--shadow-light-grey{
+  box-shadow: 10px 10px var(--pokedecks-secondary-light);
+}
+
+.custom-image-container--mid-grey{
+  background: var(--pokedecks-secondary-mid);
+}
+
+.custom-image-container--dark-grey{
+  background: var(--pokedecks-secondary-dark);
+}
+
+.custom-image-container--light-grey{
+  background: var(--pokedecks-secondary-light);
+}
+
+.custom-image-container__image{
+  object-fit: cover;
+  border-radius: var(--global-corner-radius);
+}
+
+.custom-container-two-sided {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--global-corner-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 8px;
+  z-index: 1;
+}
+
+.custom-container-two-sided__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content-column-flex {
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.custom-container-two-sided__inner {
+    background: #FFF;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--global-corner-radius);
+    padding: 10px;
+}
+
+.custom-container-two-sided:hover .custom-container-two-sided__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.custom-container-two-sided__text-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   height: 100%;
+}
+
+.custom-container-two-sided__title {
+  margin: 0;
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+}
+
+.custom-container-two-sided__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.4;
+}
+
+
+
+/* Theme base */
 
 .page-width {
   max-width: var(--page-width);
