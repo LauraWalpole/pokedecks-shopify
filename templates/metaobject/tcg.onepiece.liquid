@@ -1,14 +1,14 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 
-{% assign franchise = metaobjects.tcg.gundam %}
+{% assign franchise = metaobjects.tcg.one-piece %}
 
 
 
 {% assign expansions_with_dates = '' %}
-{% assign gundam_expansion_list = metaobjects.gundam_expansions.values %}
+{% assign onepiece_expansion_list = metaobjects.one_piece_expansions.values %}
 <!-- Build sortable string array (release_date|expansion_name) -->
-{% for expansion in gundam_expansion_list %}
+{% for expansion in onepiece_expansion_list %}
     {% assign expansion_entry = expansion.release_date | append: '|' | append: expansion.name %}
     {% assign expansions_with_dates = expansions_with_dates | append: ',' | append: expansion_entry %}
 {% endfor %}
@@ -276,7 +276,7 @@
         {% assign parts = sorted_expansion | split: '|' %}
         {% assign expansion_name = parts[1] %}
 
-        {% for expansion in gundam_expansion_list %}
+        {% for expansion in onepiece_expansion_list %}
           {% if expansion.name == expansion_name %}
             <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
               <div class="tcg-card">

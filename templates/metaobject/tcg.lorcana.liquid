@@ -1,14 +1,14 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 
-{% assign franchise = metaobjects.tcg.gundam %}
+{% assign franchise = metaobjects.tcg.disney-lorcana %}
 
 
 
 {% assign expansions_with_dates = '' %}
-{% assign gundam_expansion_list = metaobjects.gundam_expansions.values %}
+{% assign lorcana_expansion_list = metaobjects.disney_lorcana_expansions.values %}
 <!-- Build sortable string array (release_date|expansion_name) -->
-{% for expansion in gundam_expansion_list %}
+{% for expansion in lorcana_expansion_list %}
     {% assign expansion_entry = expansion.release_date | append: '|' | append: expansion.name %}
     {% assign expansions_with_dates = expansions_with_dates | append: ',' | append: expansion_entry %}
 {% endfor %}
@@ -18,7 +18,7 @@
 
 <!-- Sort and reverse the array -->
 {% assign sorted_expansions = expansions_with_dates | split: ',' | sort | reverse %}
-
+{% assign franchise = metaobjects.tcg.disney-lorcana %}
 
 {% style %}
           .flex-row {
@@ -141,7 +141,10 @@
     .pokedecks-category__data-wrapper::before{
     background: linear-gradient(45deg, {{ franchise.primary_colour }}, {{franchise.secondary_colour}} );
   }
-
+    .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
 
   .pokedecks-category__data-wrapper::after {
     border-color: (0,0,0,0.2);
@@ -203,17 +206,13 @@
 .custom-divider--theme-colour {
   background: {{ franchise.primary_colour }};
 }
-
-.text-content--dark {
-  color: #000;
-}
 }
 
 {% endstyle %}
 
 <section class="hero-fullwidth">
   <div class="hero-background">
-    <img class="background-image" src="{{ franchise.cover_image | image_url: width: 1080, height: 500 }} " width= 100% height= 100%/>
+    <img class="background-image" src="{{ franchise.cover_image | image_url: width: '750', height: '500'  }} " width= 100% height= 100%/>
 
   </div>
   <!-- Container for logo and product grid -->
@@ -223,7 +222,7 @@
     <div class="foreground-container">
     <div class="flex-row-center">
       <img
-          src="{{ franchise.logo | image_url: width: 750, height: 450 }}"
+          src="{{ franchise.logo | image_url: width: 450, height: 450 }}"
           width= 100%
           height= 100%
         />
@@ -244,14 +243,14 @@
           
           <div class="collection-data-item">
           <div class="collection-data-cell">
-            <div class="collection-data-text-content text-content--dark">
-            <p class="collection-data-subtitle "><strong>Latest release</strong></p>
+            <div class="collection-data-text-content">
+            <p class="collection-data-subtitle"><strong>Latest release</strong></p>
             <p class="collection-data-value">{{ franchise.latest_release_name }}</p>
             <p class="collection-data-value">Released on {{ franchise.latest_release_date | metafield_tag }}</p>
             </div>
           </div>
           <div class="collection-data-cell">
-            <div class="collection-data-text-content text-content--dark">
+            <div class="collection-data-text-content">
             <p class="collection-data-subtitle"><strong>Next release</strong></p>
             <p class="collection-data-value">{{ franchise.next_release_name }}</p>
             <p class="collection-data-value">Scheduled for release on {{ franchise.next_release_date | metafield_tag }}</p>
@@ -276,7 +275,7 @@
         {% assign parts = sorted_expansion | split: '|' %}
         {% assign expansion_name = parts[1] %}
 
-        {% for expansion in gundam_expansion_list %}
+        {% for expansion in lorcana_expansion_list %}
           {% if expansion.name == expansion_name %}
             <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
               <div class="tcg-card">
