@@ -1,10 +1,10 @@
 {
   "sections": {
-    "metaobject-tcgs": {
-      "type": "metaobject-tcgs"
+    "test-section": {
+      "type": "test-section"
     },
   },
   "order": [
-    "metaobject-tcgs"
+    "test-section"
   ]
 }
