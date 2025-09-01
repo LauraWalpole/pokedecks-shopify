@@ -13,6 +13,7 @@
 
 <!-- Sort and reverse the array -->
 {% assign sorted_expansions = expansions_with_dates | split: ',' | sort | reverse %}
+{% assign franchise = metaobjects.tcg.disney-lorcana %}
 
 <style>
           .flex-row {
@@ -67,7 +68,7 @@
         .tcg-card:hover::before,
         .tcg-card:focus-within::before {
           transform: rotate(90deg);
-          background: linear-gradient(-45deg, {{ series.colour_one }} 0%, {{ series.colour_two }} 100%);
+          background: linear-gradient(-45deg, {{ franchise.primary_colour}} 0%, {{ franchise.secondary_colour }} 100%);
         }
 
         .tcg-card:hover::after,
@@ -95,7 +96,7 @@
 
         .main-expansions-container {
       display: flex;
-      gap: 1rem; /* Adjust spacing between columns */
+      gap: 1rem;
     }
 
 
@@ -134,6 +135,9 @@
       }
 </style>
 
+   <div class="custom-divider custom-divider--tall custom-divider--wide custom-divider--pink" >
+      </div>
+
 <!-- Section: Sorted Expansion Tiles -->
 <section class="flex-page">
   <div class="flex-row">
@@ -144,13 +148,15 @@
 
         {% for expansion in lorcana_expansion_list %}
           {% if expansion.name == expansion_name %}
-            <a href="/collections/{{ expansion.name | handle }}" class="tcg-card-link">
+            <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
               <div class="tcg-card">
                 <div class="expansion-image">
                   <img
                     class="card-logo"
                     src="{{ expansion.image | image_url: width: '500', height: '500' }}"
                     alt="{{ expansion.name }} Logo"
+                    height="{{ expansion.image.height }}"
+                    width="{{ expansion.image.width }}"
                   >
                 </div>
               </div>

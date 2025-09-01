@@ -3,8 +3,12 @@
     "test-section": {
       "type": "test-section"
     },
+    "collection-page-list-lorcana": {
+      "type": "collection-list"
+    }
   },
   "order": [
-    "test-section"
+    "test-section",
+    "collection-page-list-lorcana"
   ]
 }
