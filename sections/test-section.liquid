@@ -5,8 +5,6 @@
 {% assign gundam = metaobjects.tcg.gundam %}
 
 
-
-
 <section class="custom-section-pattern-1 custom-section-pattern-1--dark">
 {% comment %}
  Pokemon TCG
@@ -15,6 +13,8 @@
  </div>
 <section class="section-padded">
   <div class="content-column-flex page-width">
+
+      <a href="pages/tcg/{{ pokemon.name | handle }}">
   <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
   <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ pokemon.secondary_colour }} 0%, #ffffff 50%, {{ pokemon.primary_colour }} 100%)">
     <img
@@ -31,12 +31,12 @@
       {{ pokemon.description }}
         </p>
         </div>
-
       </div>
       </div>
     
     </div>
   </div>
+  </a>
 </div>
   <div class="custom-divider custom-divider--wide custom-divider-padding-bottom custom-divider--tall custom-divider--trapezoid-heavy-right-flat-bottom custom-divider--tropical-gradient">
  </div>
@@ -52,7 +52,7 @@ One Piece
 <section class="section-padded" >
 
     <div class="content-column-flex page-width">
-
+    <a href="pages/tcg/{{ onepiece.name | handle }}">
       <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
   <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ onepiece.secondary_colour }} 0%, #ffffff 50%, {{ onepiece.primary_colour }} 100%)">
     <img
@@ -75,7 +75,7 @@ One Piece
     
     </div>
   </div>
-  
+  </a>
 </div>
  <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-left-flat-top custom-divider--tropical-gradient">
  </div>
@@ -91,6 +91,7 @@ Disney Lorcana
 <section class="section-padded">
   
     <div class="content-column-flex page-width">
+      <a href="pages/tcg/{{ lorcana.name | handle }}">
 
       <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
   <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ lorcana.secondary_colour }} 0%, #ffffff 50%, {{ lorcana.primary_colour }} 100%)">
@@ -114,6 +115,7 @@ Disney Lorcana
     
     </div>
   </div>
+</a>
 
   </div>
      <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-right-flat-bottom custom-divider--tropical-gradient">
@@ -131,6 +133,7 @@ Gundam TCG
 
 
     <div class="content-column-flex page-width">
+      <a href="pages/tcg/{{ gundam.name | handle }}">
 
       <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
   <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ gundam.secondary_colour }} 0%, #ffffff 50%, {{ gundam.primary_colour }} 100%)">
@@ -156,7 +159,7 @@ Gundam TCG
   </div>
   
 
- 
+ </a>
   </div>
        <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-left-flat-bottom custom-divider--tropical-gradient">
  </div>
@@ -164,48 +167,3 @@ Gundam TCG
 </section>
 
 </section>
-
-
-
-{% comment %}
-Add section for each tcg in list
-<section class="section-pattern-1">
-
-{% for tcg in tcg_list %}
-  <div class="container-with-pattern">
-    {% assign primary_colour = tcg.primary_colour.value %}
-    {% assign secondary_colour = tcg.secondary_colour.value %}
-<div class="content-column page-width">
-<div class="content-container-padded "
-style="box-shadow: 10px 10px {{ primary_colour }}"
->
-
-<div class="wide-card"
-style="background: linear-gradient(-45deg, {{ secondary_colour }}  0%, {{ primary_colour }} 100%);">
-    <img
-          class="horizontal-card-image"
-          src="{{ tcg.image | image_url: width: '750', height: '500'  }}"
-          width=100%
-          height=100%
-        />
-  <div class="card__content"
-style="background: linear-gradient(-45deg, {{ secondary_colour }} 0%, #ffffff 50%, {{ primary_colour }} 100%);">
-<div class= "card-content-inner">
-<div class="text-container">
-    <h1 class="section-title-dark__center">{{ tcg.headline }}</h1>
-    <p class="section-description-dark">
-      {{ tcg.description }}
-    </p>
-    </div>
-</div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-
-  {% endfor %}
-    </section>
-
-{% endcomment %}
