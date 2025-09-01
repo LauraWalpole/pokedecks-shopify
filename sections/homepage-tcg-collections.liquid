@@ -1,0 +1,169 @@
+
+{% assign pokemon = metaobjects.tcg.pokemon %}
+{% assign onepiece = metaobjects.tcg.one-piece %}
+{% assign lorcana = metaobjects.tcg.disney-lorcana %}
+{% assign gundam = metaobjects.tcg.gundam %}
+
+
+<section class="custom-section-pattern-1 custom-section-pattern-1--dark">
+{% comment %}
+ Pokemon TCG
+{% endcomment %}
+<div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--right-angle-tri-top-left-full custom-divider--tropical-gradient">
+ </div>
+<section class="section-padded">
+  <div class="content-column-flex page-width">
+
+      <a href="pages/tcg/{{ pokemon.name | handle }}">
+  <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
+  <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ pokemon.secondary_colour }} 0%, #ffffff 50%, {{ pokemon.primary_colour }} 100%)">
+    <img
+          class="custom-image-container__image"
+          src="{{ pokemon.image | image_url: width: '750', height: '500'  }}"
+          width=100%
+          height=100%
+        />
+    <div class="custom-container-two-sided__content" style="background: linear-gradient(-45deg, {{ pokemon.secondary_colour }} 0%, #ffffff 50%, {{ pokemon.primary_colour }} 100%)">
+      <div class="custom-container-two-sided__inner">
+        <div class="custom-container-two-sided__text-container">
+        <h1 class="custom-container-two-sided__title center">{{ pokemon.headline }}</h1>
+        <p class="custom-container-two-sided__description center">
+      {{ pokemon.description }}
+        </p>
+        </div>
+      </div>
+      </div>
+    
+    </div>
+  </div>
+  </a>
+</div>
+  <div class="custom-divider custom-divider--wide custom-divider-padding-bottom custom-divider--tall custom-divider--trapezoid-heavy-right-flat-bottom custom-divider--tropical-gradient">
+ </div>
+
+</section>
+
+
+
+{% comment %}
+One Piece
+{% endcomment %}
+
+<section class="section-padded" >
+
+    <div class="content-column-flex page-width">
+    <a href="pages/tcg/{{ onepiece.name | handle }}">
+      <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
+  <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ onepiece.secondary_colour }} 0%, #ffffff 50%, {{ onepiece.primary_colour }} 100%)">
+    <img
+          class="custom-image-container__image"
+          src="{{ onepiece.image | image_url: width: '750', height: '500'  }}"
+          width=100%
+          height=100%
+        />
+    <div class="custom-container-two-sided__content" style="background: linear-gradient(-45deg, {{ onepiece.secondary_colour }} 0%, #ffffff 50%, {{ onepiece.primary_colour }} 100%)">
+      <div class="custom-container-two-sided__inner">
+        <div class="custom-container-two-sided__text-container">
+        <h1 class="custom-container-two-sided__title center">{{ onepiece.headline }}</h1>
+        <p class="custom-container-two-sided__description center">
+      {{ onepiece.description }}
+        </p>
+        </div>
+
+      </div>
+      </div>
+    
+    </div>
+  </div>
+  </a>
+</div>
+ <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-left-flat-top custom-divider--tropical-gradient">
+ </div>
+
+</section>
+
+
+{% comment %}
+Disney Lorcana
+{% endcomment %}
+
+
+<section class="section-padded">
+  
+    <div class="content-column-flex page-width">
+      <a href="pages/tcg/{{ lorcana.name | handle }}">
+
+      <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
+  <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ lorcana.secondary_colour }} 0%, #ffffff 50%, {{ lorcana.primary_colour }} 100%)">
+    <img
+          class="custom-image-container__image"
+          src="{{ lorcana.image | image_url: width: '750', height: '500'  }}"
+          width=100%
+          height=100%
+        />
+    <div class="custom-container-two-sided__content" style="background: linear-gradient(-45deg, {{ lorcana.secondary_colour }} 0%, #ffffff 50%, {{ lorcana.primary_colour }} 100%)">
+      <div class="custom-container-two-sided__inner">
+        <div class="custom-container-two-sided__text-container">
+        <h1 class="custom-container-two-sided__title center">{{ lorcana.headline }}</h1>
+        <p class="custom-container-two-sided__description center">
+      {{ lorcana.description }}
+        </p>
+        </div>
+
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</a>
+
+  </div>
+     <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-right-flat-bottom custom-divider--tropical-gradient">
+ </div>
+
+
+</section>
+
+
+{% comment %}
+Gundam TCG
+{% endcomment %}
+
+<section class="section-padded">
+
+
+    <div class="content-column-flex page-width">
+      <a href="pages/tcg/{{ gundam.name | handle }}">
+
+      <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
+  <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ gundam.secondary_colour }} 0%, #ffffff 50%, {{ gundam.primary_colour }} 100%)">
+    <img
+          class="custom-image-container__image"
+          src="{{ gundam.image | image_url: width: '750', height: '500'  }}"
+          width=100%
+          height=100%
+        />
+    <div class="custom-container-two-sided__content" style="background: linear-gradient(-45deg, {{ gundam.secondary_colour }} 0%, #ffffff 50%, {{ gundam.primary_colour }} 100%)">
+      <div class="custom-container-two-sided__inner">
+        <div class="custom-container-two-sided__text-container">
+        <h1 class="custom-container-two-sided__title center">{{ gundam.headline }}</h1>
+        <p class="custom-container-two-sided__description center">
+      {{ gundam.description }}
+        </p>
+        </div>
+
+      </div>
+      </div>
+    
+    </div>
+  </div>
+  
+
+ </a>
+  </div>
+       <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-left-flat-bottom custom-divider--tropical-gradient">
+ </div>
+
+</section>
+
+</section>
