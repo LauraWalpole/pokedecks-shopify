@@ -141,10 +141,6 @@
     .pokedecks-category__data-wrapper::before{
     background: linear-gradient(45deg, {{ franchise.primary_colour }}, {{franchise.secondary_colour}} );
   }
-    .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
 
   .pokedecks-category__data-wrapper::after {
     border-color: (0,0,0,0.2);
@@ -216,7 +212,7 @@
 
 <section class="hero-fullwidth">
   <div class="hero-background">
-    <img class="background-image" src="{{ franchise.cover_image | image_url: width: 1920, height: 1080  }} " width= 100% height= 100% />
+    <img class="background-image background-image--fixed" src="{{ franchise.cover_image | image_url: width: 1920, height: 1080  }} " width= 100% height= 100% />
 
   </div>
   <!-- Container for logo and product grid -->

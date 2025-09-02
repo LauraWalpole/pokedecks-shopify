@@ -2,6 +2,7 @@
 
 {%- assign colour_one = collection.metafields.collection.colour_one | default: '#ff0000' -%}
 {%- assign colour_two = collection.metafields.collection.colour_two | default: '#0000ff' -%}
+{% assign franchise = metaobjects.tcg.pokemon %}
 
 {%- style -%}
     @media screen and (max-width: 749px) {
@@ -22,6 +23,10 @@
     background: linear-gradient(45deg, {{colour_one}}, {{colour_two}} );
     z-index: -2;
   }
+
+  .collection-data-item-styled{
+    color: #000;
+  }
 {%- endstyle -%}
 
 {%- if section.settings.show_collection_image and collection.image -%}
@@ -29,7 +34,9 @@
     <div class="isolate page-width">
       <div class="pokedecks-category__image-container-darkshadow">
         <img
-          src="{{ collection.image | image_url: width: auto, height: auto  }}"
+          src="{{ collection.image | image_url: width: 750, height: 500  }}"
+          width= 100%
+          height= 100%
         >
       </div>
     </div>
@@ -41,28 +48,27 @@
       <div class="pokedecks-category__text-wrapper">
         <h1 class="pokedecks-category__title">
           <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-          {{ collection.metafields.collection.headline.value }}
+          {{ franchise.headline }}
         </h1>
 
         {%- if section.settings.show_collection_description -%}
-          <div class="pokedecks-category__description">{{ collection.description }}</div>
+          <div class="pokedecks-category__description">{{ franchise.description }}</div>
         {%- endif -%}
       </div>
       <div class="pokedecks-category__data-wrapper">
         <div class="collection-data-grid">
           <div class="collection-data-item">
-            <h2 class="collection-data-title">{{ collection.title }} information</h2>
+            <h2 class="collection-data-title">{{ franchise.name }} TCG information</h2>
           </div>
           <div class="collection-data-item-styled">
             <p class="collection-data-subtitle">
-              <strong>Current Series: </strong> {{ collection.metafields.custom.era.value }}
+              <strong>Latest release: </strong> {{ franchise.latest_release_name }}
             </p>
+            <p class="collection-data-value">Released on {{ franchise.latest_release_date | metafield_tag }}</p>
           </div>
           <div class="collection-data-item-styled">
-            <p class="collection-data-subtitle"><strong>Newest expansion: </strong>Black Bolt & White Flare</p>
-          </div>
-          <div class="collection-data-item-styled">
-            <p class="collection-data-subtitle"><strong>Next expansion: </strong>Mega Evolution</p>
+            <p class="collection-data-subtitle"><strong>Next Release: </strong>{{ franchise.next_release_name }}</p>
+            <p class="collection-data-value">Scheduled for release on {{ franchise.next_release_date | metafield_tag }}</p>
           </div>
           <div class="collection-data-item-styled">
             <p class="collection-data-subtitle"><strong>Standard format 2025: </strong>G, H</p>

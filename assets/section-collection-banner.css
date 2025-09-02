@@ -40,7 +40,10 @@
   mask-image: linear-gradient(black, transparent);
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
- 
+}
+
+.background-image--fixed {
+  position:fixed;
 }
 
 .foreground-container{
