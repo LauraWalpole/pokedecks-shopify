@@ -107,6 +107,9 @@
 
 
 /* Custom base */
+.image-contain{
+  object-fit: contain;
+}
 
 .section-padded {
   padding: 40px 0;

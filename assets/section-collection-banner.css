@@ -69,6 +69,14 @@
   height: fit-content;
 }
 
+.flex-row-center--fixed-75{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 75%;
+}
+
 .hero-image {
   width: 100%;
   max-width: 650px;

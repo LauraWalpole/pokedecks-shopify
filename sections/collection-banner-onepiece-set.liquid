@@ -76,7 +76,7 @@
 }
 
 .hero-content {
-  
+  {
   position: relative;
   z-index: 2;               
   display: grid;            
@@ -87,21 +87,16 @@
   margin: 0 auto;           
   padding: 1rem;
   box-sizing: border-box;
-
 }
-
-.foreground-container--padded {
-  padding: 100px 0;
-
 }
 
 
 
 {%- endstyle -%}
-{% assign collection = collections.paramount-war %}
 
-{% assign current_handle = collection.handle %}
-{% assign set = metaobjects.one_piece_expansions[current_handle] %}
+
+
+
 
 <section class="hero-fullwidth">
   <div class="hero-background">
@@ -112,139 +107,63 @@
   <div class="hero-content collection page-width">
 
 <!-- Row 1: Logo and collection info-->
-    <div class="foreground-container foreground-container--padded">
-
-      <div class="flex-row-center--fixed-75">
-
-    <div class="text-content-container">
-
-        <div class="pokedecks-category__data-wrapper">
-        <div class="collection-data-grid">
-          <div class="colllection-data-item">
-                          <img class="image--contain"
-          src="{{ collection.metafields.custom.logo.value | image_url: width: 300, height: 450 }}"
-          width= 70%
+    <div class="foreground-container">
+    <div class="flex-row-center">
+      <img
+          src="{{ collection.metafields.custom.logo.value | image_url: width: 450, height: 450 }}"
+          width= 100%
           height= 100%
         />
-            </div>
+    </div>
+      <div class="flex-row-center">
+        <img
+          src="{{ collection.metafields.custom.logo.value | image_url: width: 450, height: 450 }}"
+          width= 100%
+          height= 100%
+        />
+    <div class="text-content-container">
+        <div class="pokedecks-category__data-wrapper">
+        <div class="collection-data-grid">
           <div class="collection-data-item">
-            <h1 class="collection-data-title"><strong><h1>{{ set.name }} </h1>
-</strong></h1>
+            <h1 class="collection-data-title">{{ collection.metafields.collection.headline }}</h1>
           </div>
+          <div class="collection-data-item">
+            {{ collection.title }} is the {{ collection.metafields.collection.release_order }}
+            Disney Lorcana set.
+          </div>
+          <div class="collection-data-item">
+            {{ collection.description }}
+            </div>
           
           <div class="collection-data-item">
           <div class="collection-data-cell">
             <div class="collection-data-text-content">
-              <p class="collection-data-value">
-                
-                <strong>Release date</strong>
-                <p class="collection-data-value">
-                 {% if set.release_date %}
-                  
-                {{ set.release_date | metafield_tag }}
-              {% else %}
-                TBC
-            {% endif %}
-          </p>
-            </p>
-            </div>
-          </div>
-
-          <div class="collection-data-cell">
-            <div class="collection-data-text-content">
-              <p class="collection-data-value">
-                <strong>Reference</strong>
-                <p class="collection-data-value">
-                 {% if set.code %}
-                {{ set.code }}
-              {% else %}
-                TBC
-            {% endif %}
-          </p>
-            </p>
-            </div>
-          </div>
-
-
-            </div>
-
-            <div class="collection-data-item">
-          <div class="collection-data-cell">
-            <div class="collection-data-text-content">
-            <p class="collection-data-subtitle"><strong>{{set.name}} Card Rarities</strong></p>
-            {% if set.common_cards or set.uncommon_cards or set.rare_cards or set.super_rare_cards or set.secret_rare_cards or set.leader_cards or set.special_rare_cards or set.treasure_rare_cards or set.don_cards or set.other_cards %}
-            <!-- Common cards -->
-            {% if set.common_cards  %}
-              <p class="collection-data-value">
-                Common Cards: {{set.common_cards.value}} </p>
-            {% endif %}
-            <!--Uncommon cards -->
-              {% if set.uncommon_cards  %}
-                Unommon Cards: {{set.uncommon_cards.value}} </p>
-              
-            {% endif %}
-
-            <!--Rare cards -->
-              {% if  set.rare_cards %}
-                <p class="collection-data-value">
-              Rare Cards: {{set.rare_cards.value}} </p>
-            {% endif %}
-            <!--Super Rare cards -->
-              {% if  set.super_rare_cards  %}
-                <p class="collection-data-value">
-                Super Rare Cards: {{set.super_rare_cards.value}} </p>
-              
-            {% endif %}
-            <!--Secret Rare cards -->
-              {% if  set.secret_rare_cards %}
-                <p class="collection-data-value">
-                Secret Rare Cards: {{set.secret_rare_cards.value}} </p>
-              
-            {% endif %}
-            <!--Leader cards -->
-              {% if set.leader_cards  %}
-                <p class="collection-data-value">
-             Leader Cards: {{set.leader_cards.value}} </p>
-            {% endif %}
-            <!--Special cards -->
+            <p class="collection-data-subtitle"><strong>Release date</strong></p>
             
-              {% if  set.special_rare_cards %}
-              <p class="collection-data-value">
-                Special Rare Cards: {{set.special_rare_cards.value}} </p>
+             {% if collection.metafields.collection.release_date %}
+              <p class="collection-data-value">{{ collection.metafields.collection.release_date | metafield_tag }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
             {% endif %}
-            <!--Treasure rare cards -->
-              {% if  set.treasure_rare_cards %}
-                <p class="collection-data-value">
-            Treasure Rare Cards: {{set.treasure_rare_cards.value}} </p>
-            {% endif %}
-            <!--DON!! cards -->
-              {% if  set.don_cards  %}
-              <p class="collection-data-value">
-                DON!! Cards: {{set.don_cards.value}} </p>
-            {% endif %}
-            <!--Other cards -->
-              {% if  set.other_cards  %}
-                <p class="collection-data-value">
-              Other Cards </p>
-              <p class="collection-data-value">{{set.common_cards.value}}</p>
-            {% endif %}
-          {% else %}
-
-          <p class="collection-data-value"> TBC </p>
-
-
-          {% endif %}
+            </div>
           </div>
+          <div class="collection-data-cell">
+            <div class="collection-data-text-content">
+            <p class="collection-data-subtitle"><strong>Total card count</strong></p>
+            {% if collection.metafields.collection.total_cards.value  %}
+              <p class="collection-data-value">{{ collection.metafields.collection.total_cards.value }}</p>
+              {% else %}
+                <p class="collection-data-value">TBC</p>
+            {% endif %}
+            </div>
+            </div>
 
-            </div>
-            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     </div>
-    {% comment %}
     <!-- Row 2: Products -->
 
            <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
@@ -412,7 +331,7 @@
     </div>
     </section>
 
-{% endcomment %}
+
 
 
 
