@@ -25,13 +25,16 @@
 {%- endif -%}
 
 
-{%- assign colour_one = collection.metafields.collection.colour_one | default: '#eacfc6' -%}
-{%- assign colour_two = collection.metafields.collection.colour_two | default: '#d6e1e6' -%}
+
+{% assign current_handle = collection.handle %}
+{% assign set = metaobjects.one_piece_expansions[current_handle] %}
+
+
 
 {%- style -%}
 
   .pokedecks-category__data-wrapper::before{
-    background: linear-gradient(45deg, {{ colour_one }}, {{colour_two}} );
+    background: linear-gradient(45deg, {{ set.primary_colour }}, {{set.secondary_colour}} );
   }
     .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -44,7 +47,7 @@
   }
 
   .collection-data-cell{
-    background-color: {{ colour_one }}
+    background-color: {{ set.primary_colour }}
   }
 
 
@@ -95,13 +98,8 @@
 
 }
 
-
-
 {%- endstyle -%}
-{% assign collection = collections.paramount-war %}
 
-{% assign current_handle = collection.handle %}
-{% assign set = metaobjects.one_piece_expansions[current_handle] %}
 
 <section class="hero-fullwidth">
   <div class="hero-background">
@@ -121,11 +119,13 @@
         <div class="pokedecks-category__data-wrapper">
         <div class="collection-data-grid">
           <div class="colllection-data-item">
-                          <img class="image--contain"
-          src="{{ collection.metafields.custom.logo.value | image_url: width: 300, height: 450 }}"
-          width= 70%
-          height= 100%
-        />
+<img class="image--contain"
+  src= "https://cdn.shopify.com/s/files/1/0903/9629/5493/files/Onepiece-logo-dark.png?v=1757177792"
+  width= 70%
+  height= 100%
+
+/>
+
             </div>
           <div class="collection-data-item">
             <h1 class="collection-data-title"><strong><h1>{{ set.name }} </h1>
@@ -244,14 +244,15 @@
       </div>
     </div>
     </div>
-    {% comment %}
+
     <!-- Row 2: Products -->
 
            <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
-  
+    
   
         {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
+
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
       <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
         <form class="facets-vertical-form" id="FacetSortForm">
@@ -310,25 +311,12 @@
       </facet-filters-form>
     {%- endif -%}
 
+
+
     <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-      {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-        <aside
-          aria-labelledby="verticalTitle"
-          class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
-          id="main-collection-filters"
-          data-id="{{ section.id }}"
-        >
-          {% render 'facets',
-            results: collection,
-            enable_filtering: section.settings.enable_filtering,
-            enable_sorting: section.settings.enable_sorting,
-            filter_type: section.settings.filter_type,
-            paginate: paginate
-          %}
-        </aside>
-      {%- endif -%}
+
 
       <div
         class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -409,10 +397,8 @@
 </div>
 
 
-    </div>
-    </section>
+</section>
 
-{% endcomment %}
 
 
 

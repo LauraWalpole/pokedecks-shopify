@@ -34,6 +34,7 @@
 
   --pattern-1: url('https://cdn.shopify.com/s/files/1/0903/9629/5493/files/pattern-geometric-1.png?v=1756404257') repeat;
 
+
   --global-corner-radius: 8px;
 }
 
@@ -274,7 +275,7 @@ background: linear-gradient(
 }
 
 .custom-section-pattern-1--light {
-  background: var(--pokedecks-secondary-light)
+  background: var(--pokedecks-secondary-light);
 }
 
 .custom-image-container{ 
