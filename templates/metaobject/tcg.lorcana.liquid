@@ -253,7 +253,14 @@
             <div class="collection-data-text-content">
             <p class="collection-data-subtitle"><strong>Next release</strong></p>
             <p class="collection-data-value">{{ franchise.next_release_name }}</p>
-            <p class="collection-data-value">Scheduled for release on {{ franchise.next_release_date | metafield_tag }}</p>
+            
+            <p class="collection-data-value">
+              {% if franchise.next_release_date %}
+              Scheduled for release on {{ franchise.next_release_date | metafield_tag }}
+              {% else %}
+                <i>Release date to be confirmed</i>
+              {% endif %}
+            </p>
             </div>
           </div>
 
