@@ -1,0 +1,16 @@
+
+{
+  "sections": {
+    "collection-banner-gundam-set": {
+      "type": "collection-banner-gundam-set",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+  },
+  "order": [
+    "collection-banner-gundam-set"
+  ]
+}
