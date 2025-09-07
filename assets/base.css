@@ -175,6 +175,14 @@ clip-path: polygon(100% 0, 50% 100%, 100% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
 }
 
+.divider {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.divider--4px {
+  height: 4px;
+}
 
 .custom-divider {
   position: absolute;

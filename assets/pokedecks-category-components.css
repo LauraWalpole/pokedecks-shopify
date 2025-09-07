@@ -237,13 +237,17 @@
   margin: 0;
 }
 
+.collection-data-value--italic {
+  font-style: italic;
+
+}
+
 
 .collection-data-item {
   display: flex;
   gap: 1rem;
   justify-content: center;
   color: #000;
-
   align-items: center
 }
 

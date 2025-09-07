@@ -76,7 +76,7 @@
 }
 
 .hero-content {
-  {
+  
   position: relative;
   z-index: 2;               
   display: grid;            
@@ -87,7 +87,11 @@
   margin: 0 auto;           
   padding: 1rem;
   box-sizing: border-box;
+
 }
+
+.divider--4px {
+  background-color: {{ set.secondary_colour }}
 }
 
 
@@ -123,19 +127,19 @@
               </div>
           
             <div class="collection-data-item collection-data-item--row">
-
+              {% if set.pre_release_date  %}
               <div class="collection-data-cell">
                 <div class="collection-data-text-content">
                   <p class="collection-data-subtitle"><strong>Pre-Release date</strong></p>
                   <p class="collection-data-value">
-                     {% if set.pre_release_date  %}
-                      {{ set.pre_release_date}}
-                      {% else %}
-                      TBC
-                      {% endif %}
+                     
+                      {{ set.pre_release_date | metafield_tag}}
+                      
                   </p>
                 </div>
               </div>
+              {% endif %}
+
             <div class="collection-data-cell">
               <div class="collection-data-text-content">
                 <p class="collection-data-subtitle"><strong>Release date</strong></p>
@@ -148,33 +152,77 @@
             </div>
           
           </div>
-          <div class="collection-data-item collection-data-item--column">
+          <div class="collection-data-item collection-data-item--row">
 
-              <div class="collection-data-cell">
-                <div class="collection-data-text-content">
-                  <p class="collection-data-subtitle"><strong>Main Set</strong></p>
-                  <p class="collection-data-value">
-                     {% if set.main_set  %}
-                      {{ set.main_set}} Cards
-                      {% else %}
-                      TBC
-                      {% endif %}
-                  </p>
-                </div>
+            <div class="collection-data-cell">
+              <div class="collection-data-text-content">
+                <p class="collection-data-subtitle"><strong>Main Set</strong></p>
+                <p class="collection-data-value">
+                    {% if set.main_set  %}
+                    {{ set.main_set}} Cards
+                    {% else %}
+                    TBC
+                    {% endif %}
+                </p>
               </div>
+            </div>
+
             <div class="collection-data-cell">
               <div class="collection-data-text-content">
                 <p class="collection-data-subtitle"><strong>Enchanted Cards</strong></p>
                 <p class="collection-data-value">
                   {% if set.enchanted_cards  %}
-                      {{ set.enchanted_cards}} Cards
-                      {% else %}
-                      TBC
-                      {% endif %}
-                    </p>
+                  {{ set.enchanted_cards}} Cards
+                  {% else %}
+                  TBC
+                  {% endif %}
+                </p>
+              </div>
             </div>
+        {% if set.iconic_cards  %}
+            <div class="collection-data-cell">
+              <div class="collection-data-text-content">
+                <p class="collection-data-subtitle"><strong>Iconic Cards</strong></p>
+                <p class="collection-data-value">
+                  
+                  {{ set.iconic_cards}} Cards
+                  
+                </p>
+              </div>
+            </div>
+          {% endif %}
+
+
+          </div> <!-- End data item -->
+          
+          <div class="divider divider--4px">
           </div>
+
+          <!--Product Contents -->
+              <div class="collection-data-item collection-data-item--column ">
+
+                <div class="collection-data-subtitle"><strong>Product contents</strong></div>
+                <p class="collection-data-value collection-data-value--italic">
+                  {% if set.booster_pack_contents %}
+                    Each '{{ set.name }}' Booster Pack contains {{ set.booster_pack_contents }}.
+                  {% else %}
+                    Booster Pack configuration TBC.
+                  {% endif %}
+                  </p>
+                <p class="collection-data-value collection-data-value--italic">
+                  {% if set.booster_box_contents %}
+                    Each '{{ set.name }}' Booster Box contains {{ set.booster_box_contents }}.
+                  {% else %}
+                    Booster Box configuration TBC.
+                  {% endif %}
+                </p>
+
+              </div> <!-- data item -->
+          <div class="divider divider--4px">
           </div>
+            
+
+
         </div>
       </div>
     </div>
