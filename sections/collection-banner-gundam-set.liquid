@@ -76,7 +76,7 @@
 }
 
 .hero-content {
-  {
+  
   position: relative;
   z-index: 2;               
   display: grid;            
@@ -87,9 +87,12 @@
   margin: 0 auto;           
   padding: 1rem;
   box-sizing: border-box;
-}
+
 }
 
+.divider--4px {
+  background-color: {{ set.secondary_colour }}
+}
 
 
 {%- endstyle -%}
@@ -117,14 +120,14 @@
         />
       </div>
 
-      <div class="flex-row-center--fixed-75">
+      <div class="flex-row-center--fixed-100">
         <div class="text-content-container">
           <div class="pokedecks-category__data-wrapper">
             <div class="collection-data-grid">
 
               <!-- Collection description -->
               <div class="collection-data-item collection-data-item--column">
-               <h1 class="collection-data-title"> {{ set.headline }} </h1>
+               <h2 class="text--gundam-font"> {{ set.headline }} </h2>
               </div>
               
 
@@ -132,9 +135,9 @@
               <div class="collection-data-item collection-data-item--row">
                 <div class="collection-data-cell">
                   <div class="collection-data-text-content">
-                    <p class="collection-data-subtitle"><strong>Release date</strong></p>
+                    <p class="collection-data-subtitle text--gundam-font "><strong>Release date</strong></p>
                     {% if set.release_date %}
-                      <p class="collection-data-value">{{ set.release_date | metafield_tag }}</p>
+                      <p class="collection-data-value text--gundam-font ">{{ set.release_date | metafield_tag }}</p>
                     {% else %}
                       <p class="collection-data-value">TBC</p>
                     {% endif %}
@@ -156,7 +159,7 @@
 
 
               <!-- Set rarities -->
-              <div class="collection-data-item collection-data-item--column">
+              <div class="collection-data-item collection-data-item--row">
                 <div class="collection-data-cell">
                   <div class="collection-data-text-content">
                     <p class="collection-data-subtitle"><strong>Set Rarities</strong></p>
@@ -197,11 +200,14 @@
               {% endif %}
               </div> <!-- data item -->
 
+          <div class="divider divider--4px">
+          </div>
+
               <!--Product Contents -->
               <div class="collection-data-item collection-data-item--column ">
 
                 <div class="collection-data-subtitle"><strong>Product contents</strong></div>
-                <p class="collection-data-value">
+                <p class="collection-data-value text--gundam-font ">
                   {% if set.booster_pack_contents %}
                     Each {{ set.name }} Booster Pack contains {{ set.booster_pack_contents }}.
                   {% else %}
@@ -217,7 +223,8 @@
                 </p>
 
               </div> <!-- data item -->
-            
+        <div class="divider divider--4px">
+          </div>
 
 
 
@@ -298,10 +305,8 @@
               <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
                 <div class="loading-overlay gradient"></div>
                 <div class="title-wrapper center">
-                  <h2 class="title title--primary">
-                    {{ 'sections.collection_template.empty' | t -}}
-                    <br>
-                    {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: 'underlined-link link' }}
+                  <h2 class="title title--primary title--color-black">
+                    Products Coming Soon!
                   </h2>
                 </div>
               </div>

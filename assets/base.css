@@ -403,6 +403,9 @@ background: linear-gradient(
   line-height: 1.4;
 }
 
+.title--color-black {
+  color:#000;
+}
 
 
 /* Theme base */

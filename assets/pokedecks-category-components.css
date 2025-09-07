@@ -231,6 +231,15 @@
   text-align: center;
   margin: 0;
   color: #000;
+  font-size: 46px;
+  padding: 20px 0;
+}
+
+.title--gundam-font {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", -apple-system, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+
 }
 
 .collection-data-value {
@@ -248,7 +257,7 @@
   gap: 1rem;
   justify-content: center;
   color: #000;
-  align-items: center
+
 }
 
 .collection-data-item--column {
@@ -266,12 +275,16 @@
   padding: 5px;
   text-align: center;
   width: 100%;
+  min-height: 100%;
 
 }
+
+
 
 .collection-data-text-content {
   color:#FFF;
 }
+
 
 .collection-data-subtitle {
   margin: 2px;
