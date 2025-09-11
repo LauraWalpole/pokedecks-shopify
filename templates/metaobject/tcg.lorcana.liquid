@@ -1,10 +1,8 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-tcg-card.css' | asset_url | stylesheet_tag }}
 
 {% assign franchise = metaobjects.tcg.disney-lorcana %}
-
-
-
 {% assign expansions_with_dates = '' %}
 {% assign lorcana_expansion_list = metaobjects.disney_lorcana_expansions.values %}
 <!-- Build sortable string array (release_date|expansion_name) -->
@@ -40,12 +38,27 @@
         width: 100%;
       }
 
+    
+      .tcg-card-inactive {
+        display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          border-radius: 8px;
+          transition: all 0.5s ease;
+          box-shadow: none;
+          margin: 20px;
+          width: fit-content;
+          height: fit-content;
+
+      }
+
   .tcg-card {
           display: flex;
           justify-content: center;
           align-items: center;
           position: relative;
-          border-radius: 10px;
+          border-radius: 8px;
           transition: all 0.5s ease;
           box-shadow: none;
           margin: 20px;
@@ -58,7 +71,7 @@
           content: '';
           position: absolute;
           inset: -5px;
-          border-radius: 10px;
+          border-radius: 8px;
           background: linear-gradient(-45deg, #2c3a57 0%, #8c9eb1 100%);
           z-index: -1;
           transition: transform 0.6s ease-in-out, background 0.6s ease-in-out;
@@ -141,10 +154,7 @@
     .pokedecks-category__data-wrapper::before{
     background: linear-gradient(45deg, {{ franchise.primary_colour }}, {{franchise.secondary_colour}} );
   }
-    .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+
 
   .pokedecks-category__data-wrapper::after {
     border-color: (0,0,0,0.2);
@@ -284,6 +294,7 @@
 
         {% for expansion in lorcana_expansion_list %}
           {% if expansion.name == expansion_name %}
+            {% if expansion.has_collection == true %}
             <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
               <div class="tcg-card">
                 <div class="expansion-image">
@@ -297,6 +308,19 @@
                 </div>
               </div>
             </a>
+            {% else %}
+            <div class="tcg-card-inactive">
+            <div class="expansion-image">
+              <img
+                class="card-logo"
+                src="{{ expansion.image | image_url: width: 500, height: 500 }}"
+                alt="{{ expansion.name }} Logo"
+                height="{{ expansion.image.height }}"
+                width="{{ expansion.image.width }}"
+              >
+            </div>
+          </div>
+          {% endif %}
 
           {% endif %}
         {% endfor %}

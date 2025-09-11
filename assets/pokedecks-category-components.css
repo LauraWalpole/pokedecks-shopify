@@ -235,7 +235,7 @@
   padding: 20px 0;
 }
 
-.title--gundam-font {
+.text--gundam-font {
   font-family: "Zen Kaku Gothic New", "Noto Sans JP", -apple-system, sans-serif;
   font-weight: 500;
   line-height: 1.5;
@@ -298,6 +298,53 @@
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+  .midground-container {
+  position: relative; 
+  z-index: 1;         
+  width: 100%;
+  margin-top: 2rem;   
+}
+
+.hero-fullwidth {
+  position: relative;
+  width: 100%;
+  min-height: 65vh;
+  height: auto;
+  overflow: visible;
+  display: block; 
+}
+
+.hero--short {
+  height: 65vh;
+
+}
+
+
+.foreground-container {
+  position: relative;         
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-content {
+  
+  position: relative;
+  z-index: 2;               
+  display: grid;            
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;           
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 /* Responsive design for mobile devices */
