@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "test-section": {
-      "type": "test-section",
+    "password-entry-product-drop": {
+      "type": "password-entry-product-drop",
       "settings": {}
     }
   },
   "order": [
-    "test-section"
+    "password-entry-product-drop"
   ]
 }
