@@ -1,5 +1,6 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-tcg-card.css' | asset_url | stylesheet_tag  }}
 
 {% assign franchise = metaobjects.tcg.gundam %}
 
@@ -278,6 +279,7 @@
 
         {% for expansion in gundam_expansion_list %}
           {% if expansion.name == expansion_name %}
+            {% if expansion.has_collection == true %}
             <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
               <div class="tcg-card">
                 <div class="expansion-image">
@@ -291,6 +293,19 @@
                 </div>
               </div>
             </a>
+            {% else %}
+            <div class="tcg-card-inactive">
+            <div class="expansion-image">
+              <img
+                class="card-logo"
+                src="{{ expansion.image | image_url: width: 500, height: 500 }}"
+                alt="{{ expansion.name }} Logo"
+                height="{{ expansion.image.height }}"
+                width="{{ expansion.image.width }}"
+              >
+            </div>
+          </div>
+          {% endif %}
 
           {% endif %}
         {% endfor %}
