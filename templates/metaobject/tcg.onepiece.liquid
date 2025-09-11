@@ -32,13 +32,29 @@
 
           .flex-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 20px;
         padding: 20px;
         justify-content: center;
         max-width: var(--page-width);
         width: 100%;
       }
+  
+      .tcg-card-inactive {
+        display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          border-radius: 10px;
+          transition: all 0.5s ease;
+          box-shadow: none;
+          margin: 20px;
+          width: fit-content;
+          height: fit-content;
+      }
+
+
+
 
   .tcg-card {
           display: flex;
@@ -277,7 +293,10 @@
         {% assign expansion_name = parts[1] %}
 
         {% for expansion in onepiece_expansion_list %}
+          
           {% if expansion.name == expansion_name %}
+
+            {% if expansion.has_collection == true %}
             <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
               <div class="tcg-card">
                 <div class="expansion-image">
@@ -291,7 +310,19 @@
                 </div>
               </div>
             </a>
-
+          {% else %}
+            <div class="tcg-card-inactive">
+            <div class="expansion-image">
+              <img
+                class="card-logo"
+                src="{{ expansion.image | image_url: width: 500, height: 500 }}"
+                alt="{{ expansion.name }} Logo"
+                height="{{ expansion.image.height }}"
+                width="{{ expansion.image.width }}"
+              >
+            </div>
+          </div>
+          {% endif %}
           {% endif %}
         {% endfor %}
       {% endfor %}
