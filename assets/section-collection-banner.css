@@ -62,6 +62,22 @@
   padding: 1rem;
   box-sizing: border-box;
   top: 0;
+  border-radius: var(--global-corner-radius);
+}
+
+.foreground-container--white {
+  background-color: #fff;
+}
+
+.foreground-container--margin-tb-10 {
+  margin: 20px 0;
+}
+
+
+.foreground-container--border-purple {
+  border-color: var(--pokedecks-primary-purple);
+  border-width: 4px;
+  border-style: solid;;
 }
 
 .flex-row-center{
@@ -70,6 +86,14 @@
   align-items: center;
   width: fit-content;
   height: fit-content;
+}
+
+.flex-row-center--fixed-60{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 60%;
 }
 
 .flex-row-center--fixed-75{
@@ -120,6 +144,10 @@
     font-size: 1.5rem;
     width:100%;
 
+  }
+
+  .flex-row-center--fixed-60 {
+    width: 80%;
   }
 
   .collection-data-cell {

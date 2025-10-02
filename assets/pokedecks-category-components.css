@@ -261,6 +261,13 @@
 
 }
 
+.collection-data-item--white {
+   display: flex;
+  gap: 1rem;
+  justify-content: center;
+  color: #fff;
+}
+
 .collection-data-item--column {
   flex-direction: column;
 }
@@ -286,6 +293,9 @@
   color:#FFF;
 }
 
+.collection-data-text-content--black {
+  color:#000;
+}
 
 .collection-data-subtitle {
   margin: 2px;

@@ -116,11 +116,9 @@
   padding: 40px 0;
 }
 
-
 .custom-container {
   padding: 75px 0;
 }
-
 
 .custom-divider--right-angle-tri-top-left-full {
 clip-path: polygon(0 100%, 100% 0, 0 0);
@@ -149,7 +147,6 @@ clip-path: polygon(100% 0, 0 100%, 100% 100%);
 .custom-divider--right-angle-tri-bottom-right {
 clip-path: polygon(100% 0, 50% 100%, 100% 100%);
 }
-
 
 .custom-divider--rhombus-centred {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -439,10 +436,12 @@ background: linear-gradient(
   margin: 0 auto;
 }
 
-
-
 .title--color-black {
   color:#000;
+}
+
+.subtext {
+  color:#2c3a57;
 }
 
 
