@@ -410,6 +410,10 @@ background: linear-gradient(
   display: block; 
 }
 
+.hero-fullheight {
+  height:100vh;
+}
+
 .hero-content {
   
   position: relative;
@@ -442,6 +446,10 @@ background: linear-gradient(
 
 .subtext {
   color:#2c3a57;
+}
+
+.body-fullheight {
+  height: 100%;
 }
 
 
