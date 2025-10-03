@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -95,11 +104,35 @@
         "padding_top": 36,
         "padding_bottom": 68
       }
+    },
+    "rich_text_BqpzCV": {
+      "type": "rich-text",
+      "blocks": {
+        "text_hnnVCR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.tcg.value.booster_pack_structure | metafield_tag }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_hnnVCR"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "product-info-pkmn-tcg",
-    "related-products"
+    "related-products",
+    "rich_text_BqpzCV"
   ]
 }
