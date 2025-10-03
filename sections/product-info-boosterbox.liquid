@@ -59,6 +59,12 @@
         <h2 class="contents-header">What's Included?</h2>
           <div class="product-info-row">
             <p class="product-info-title">{{ product.metafields.custom.product_contents_booster_packs | metafield_tag }}</p>
+            {% if product.metafields.custom.tcg != blank %}
+            {% assign pack_disclaimer = product.metafields.custom.tcg.booster-pack-structure %}
+            <p class="product-info-value">
+                {{ pack_disclaimer }}
+            </p>
+            {% endif %}
           </div>
       </div>
     
