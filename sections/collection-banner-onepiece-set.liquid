@@ -180,8 +180,8 @@
             {% endif %}
             <!--Uncommon cards -->
               {% if set.uncommon_cards  %}
+                <p class="collection-data-value">
                 Unommon Cards: {{set.uncommon_cards.value}} </p>
-              
             {% endif %}
 
             <!--Rare cards -->
@@ -329,14 +329,9 @@
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
             <div class="title-wrapper center">
-              <h2 class="title title--primary">
-                {{ 'sections.collection_template.empty' | t -}}
-                <br>
-                {{
-                  'sections.collection_template.use_fewer_filters_html'
-                  | t: link: collection.url, class: 'underlined-link link'
-                }}
-              </h2>
+              <h2 class="title title--primary title--color-black">
+                    Products Coming Soon!
+                  </h2>
             </div>
           </div>
         {%- else -%}
