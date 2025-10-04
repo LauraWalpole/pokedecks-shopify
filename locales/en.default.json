@@ -120,7 +120,7 @@
   },
   "products": {
     "product": {
-      "booster_box_disclaimer": "Booster Boxes are dispatched in the same sealed condition in which they are received from our distributor, however we cannot guarantee that the external packaging will be in mint c.",
+      "booster_box_disclaimer": "Booster Boxes are dispatched in the same sealed condition in which they are received from our distributor, however we cannot guarantee that the external packaging will be in mint condition.",
       "add_to_cart": "Add to cart",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",

@@ -1,0 +1,52 @@
+
+{{ 'product-info.css' | asset_url | stylesheet_tag }}
+
+<section class="section-light-grey">
+  <div class="page-width">
+      <div class="product-info-container">
+        <h2 class="contents-header">What's Included?</h2>
+        <!-- Booster packs-->
+            {% if product.metafields.custom.product_content_booster_packs != blank  %}
+            <div class="product-info-row">
+                <p class="product-info-title">Booster Packs</p>
+                <div class="product-info-value">
+               {{ product.metafields.custom.product_content_booster_packs | metafield_tag }}
+                </div>
+                <p class="product-info-value__disclaimer">
+                <i>Each booster pack contains {{ product.metafields.custom.tcg.value.booster_pack_structure | metafield_tag }} </i>
+            </p>
+            </div>
+            {% endif %}
+            <!-- Promo Cards-->
+            {% if product.metafields.custom.product_contents_single_cards != blank  %}
+             <div class="product-info-row">
+                <p class="product-info-title">Single Cards</p>
+                <div class="product-info-value">
+               {{ product.metafields.custom.product_contents_single_cards | metafield_tag }}
+                </div>
+            </div>
+            
+            {% endif %}
+
+            <!-- Other items -->
+            {% if product.metafields.custom.product_contents_other != blank  %}
+                <div class="product-info-row">
+                    <p class="product-info-title">Other items</p>
+                    <div class="product-info-value">
+                    {{ product.metafields.custom.product_contents_other | metafield_tag }}
+                </div>
+            </div>
+            
+            {% endif %}
+
+      </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Product info booster box",
+  "settings": []
+}
+{% endschema %}

@@ -83,8 +83,8 @@
         "padding_bottom": 24
       }
     },
-    "product-info-boosterbox": {
-      "type": "product-info-boosterbox",
+    "product-info-collectionbox": {
+      "type": "product-info-collectionbox",
       "settings": {}
     },
     "related-products": {
@@ -108,7 +108,7 @@
   },
   "order": [
     "main",
-    "product-info-boosterbox",
+    "product-info-collectionbox",
     "related-products"
   ]
 }
