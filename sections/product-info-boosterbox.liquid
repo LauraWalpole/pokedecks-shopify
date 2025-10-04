@@ -31,10 +31,16 @@
   }
 
   .product-info-value {
-    list-style-type: none;
     padding: 0;
     margin: 0;
     color: #f6f9fc;
+  }
+
+  .product-info-value__disclaimer {
+    padding: 0;
+    margin: 0;
+    color: #f6f9fc;
+    font-size: 14px; 
   }
 
   .metafield-single_line_text_field-array {
@@ -57,21 +63,26 @@
     }
 </style>
 
-{% if product.metafields.custom.product_contents_booster_packs != blank  %}
+{% if product.metafields.custom.product_content_booster_packs != blank  %}
 <section class="section-light-grey">
   <div class="page-width">
       <div class="product-info-container">
         <h2 class="contents-header">What's Included?</h2>
           <div class="product-info-row">
             <div class="product-info-value">
-               {{ product.metafields.custom.product_contents_booster_packs | metafield_tag }}
+               {{ product.metafields.custom.product_content_booster_packs | metafield_tag }}
             </div>
         </div>
+        <i>
             <div class="product-info-row">
-            <p class="product-info-value">
-                <i>Each booster pack contains {{ product.metafields.custom.tcg.value.booster_pack_structure | metafield_tag }}</i>
+<div class="product-info-value__disclaimer">
+              {{- 'products.product.booster_box_disclaimer' | t -}}
+              </div>
+            <p class="product-info-value__disclaimer">
+                Each booster pack contains {{ product.metafields.custom.tcg.value.booster_pack_structure | metafield_tag }}
             </p>
           </div>
+          </i>
       </div>
   </div>
 </section>
