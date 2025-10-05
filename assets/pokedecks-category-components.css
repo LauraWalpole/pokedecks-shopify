@@ -287,6 +287,14 @@
 
 }
 
+.collection-data-cell--transparent {
+  background: none;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  color:#000;
+}
 
 
 .collection-data-text-content {
@@ -299,6 +307,10 @@
 
 .collection-data-subtitle {
   margin: 2px;
+}
+
+.collection-data-subtitle--dark {
+  color:#000
 }
 
 .collection-data-cell-value {
