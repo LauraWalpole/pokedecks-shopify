@@ -10,12 +10,17 @@
 {
   
   "sections": {
-    "tcg-series-list": {
-      "type": "tcg-series-list",
+    "collection-banner-pkmn-series": {
+      "type": "collection-banner-pkmn-series",
+      "settings": {}
+    },
+    "collection-page-list-pkmn": {
+      "type": "collection-page-list-pkmn",
       "settings": {}
     }
   },
   "order": [
-    "tcg-series-list"
+    "collection-banner-pkmn-series",
+    "collection-page-list-pkmn"
   ]
 }

@@ -1,0 +1,94 @@
+{{ 'spotlight-collection.css' | asset_url | stylesheet_tag }}
+{{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
+
+
+{% liquid
+    assign franchise = metaobjects.tcg.pokemon
+  assign series_list = metaobjects.tcg_series_pkmn.values
+%}
+
+
+<section class="hero-fullwidth">
+    <div class="hero-background">
+        <img class="background-image background-image--fixed" src="{{ franchise.cover_image | image_url: width: 1920, height: 1080  }} " width= 100% height= 100% />
+    </div>
+    <div class="hero-content collection page-width">
+        <div class="foreground-container">
+            <div class="flex-row-center">
+                <img
+                src="{{ franchise.logo | image_url: width: 750, height: 450 }}"
+                width= 100%
+                height= 100%
+                />
+            </div>
+            <div class="text-content-container page-width">
+                <div class="pokedecks-category__data-wrapper">
+                    <div class="collection-data-grid">
+                        <div class="collection-data-item">
+                            <h1 class="collection-data-title">{{ franchise.headline }}</h1>
+                            <div class="collection-data-item">
+                            {{ franchise.description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-dark">
+  <div class="isolate page-width">
+    <div class="section-heading">
+
+    </div>
+    {% for series in series_list %}
+    <!-- Primary Collection -->
+    <section class="spotlight-section status-{{ series.is_current.value | handle }} ">
+      <div class="status-banner">
+        <span class="status-value">{{ series.status.value }}</span>
+      </div>
+      <div class="spotlight-wrapper">
+        <!-- Two-column row -->
+        <div class="spotlight-content-row">
+          <!-- Image Column -->
+          <div class="spotlight-column first-column">
+            <div class="spotlight-image-wrapper">
+              <img
+                src="{{ series.logo | image_url: width: 525, height: 300}}"
+                alt="Image showing the logo for the {{ series.name }} series with Pokemon in the background."
+                class="spotlight-image"
+                height= 300
+                width= 525
+              >
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div class="spotlight-column last-column">
+            <div class="spotlight-text">
+              <p class="spotlight-description">
+                {{ series.description }}
+              </p>
+            </div>
+            <div class="spotlight-button-wrapper">
+              <a href="/pages/pkmn-series/{{ series.name | handle }}" class="spotlight-button">View {{ series.name }} sets</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endfor %}
+
+    
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection spotlight",
+  "settings": []
+}
+{% endschema %}
