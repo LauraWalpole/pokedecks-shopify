@@ -112,6 +112,50 @@
   border-radius: 12px;
 }
 
+/* Status banner: true */
+.status-true .status-banner {
+  background-color: #b9eee6;
+}
+.status-true .status-value {
+  color: #2a8073;
+}
+
+.status-true .spotlight-button {
+  color: #b9eee6;
+  box-shadow: 0 0 0 2px #b9eee6;
+}
+
+.status-true .spotlight-button:hover {
+  background-color: #b9eee6;
+  color: #0a2540;
+  box-shadow: 0 0 0 12px transparent;
+  border-radius: 12px;
+}
+
+
+/* Status banner: false */
+.status-false .status-banner {
+  background-color: #c3b5e9;
+}
+.status-false .status-value {
+  color: #372473;
+}
+
+.status-false .spotlight-button {
+  color: #c3b5e9;
+  box-shadow: 0 0 0 2px #c3b5e9;
+}
+
+.status-false .spotlight-button:hover {
+  background-color: #c3b5e9;
+  color: #0a2540;
+  box-shadow: 0 0 0 12px transparent;
+  border-radius: 12px;
+}
+
+
+
+
 /* Status banner styling: Coming Soon */
 .status-coming-soon .status-banner {
   background-color: #c3b5e9;

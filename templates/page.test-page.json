@@ -8,15 +8,14 @@
  * ------------------------------------------------------------
  */
 {
-  "layout":
-    "password-product-drop",
+  
   "sections": {
-    "password-entry-product-drop": {
-      "type": "password-entry-product-drop",
+    "tcg-series-list": {
+      "type": "tcg-series-list",
       "settings": {}
     }
   },
   "order": [
-    "password-entry-product-drop"
+    "tcg-series-list"
   ]
 }
