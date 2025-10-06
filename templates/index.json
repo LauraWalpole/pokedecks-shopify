@@ -59,8 +59,8 @@
         "show_text_below": false
       }
     },
-    "homepage-spotlight-collections": {
-      "type": "homepage-spotlight-collections",
+    "homepage-tcg-collections": {
+      "type": "homepage-tcg-collections",
       "settings": {}
     },
     "image_banner_gjVDh9": {
@@ -84,17 +84,14 @@
       "type": "homepage-releasecalendar",
       "settings": {}
     },
-    "homepage_statement_cards": {
-      "type": "homepage-statement-cards",
-      "settings": {}
-    }
+    
   },
   "order": [
     "image_banner_iAHwGd",
-    "homepage-spotlight-collections",
+    "homepage-tcg-collections",
     "image_banner_gjVDh9",
-    "homepage-releasecalendar",
-    "homepage_statement_cards"
+    "homepage-releasecalendar"
+   
   ]
 }
 
