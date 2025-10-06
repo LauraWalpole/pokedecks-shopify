@@ -4,7 +4,7 @@
 
 
 {% liquid
-    assign franchise = metaobjects.tcg.pokemon
+  assign franchise = metaobjects.tcg.pokemon
   assign series_list = metaobjects.tcg_series_pkmn.values
 %}
 
@@ -21,18 +21,6 @@
                 width= 100%
                 height= 100%
                 />
-            </div>
-            <div class="text-content-container page-width">
-                <div class="pokedecks-category__data-wrapper">
-                    <div class="collection-data-grid">
-                        <div class="collection-data-item">
-                            <h1 class="collection-data-title">{{ franchise.headline }}</h1>
-                            <div class="collection-data-item">
-                            {{ franchise.description }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -86,9 +74,3 @@
   </div>
 </section>
 
-{% schema %}
-{
-  "name": "Collection spotlight",
-  "settings": []
-}
-{% endschema %}
