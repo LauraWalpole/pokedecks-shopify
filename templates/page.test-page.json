@@ -8,19 +8,15 @@
  * ------------------------------------------------------------
  */
 {
-  
+  "layout":
+    "password-product-drop",
   "sections": {
-    "collection-banner-pkmn-series": {
-      "type": "collection-banner-pkmn-series",
-      "settings": {}
-    },
-    "collection-page-list-pkmn": {
-      "type": "collection-page-list-pkmn",
+    "password-entry-maintenance": {
+      "type": "password-entry-maintenance",
       "settings": {}
     }
   },
   "order": [
-    "collection-banner-pkmn-series",
-    "collection-page-list-pkmn"
+    "password-entry-maintenance"
   ]
 }
