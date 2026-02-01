@@ -11,12 +11,12 @@
   "layout":
     "password-product-drop",
   "sections": {
-    "password-entry-maintenance": {
-      "type": "password-entry-maintenance",
+    "password-entry-product-drop-prep": {
+      "type": "password-entry-product-drop-prep",
       "settings": {}
     }
   },
   "order": [
-    "password-entry-maintenance"
+    "password-entry-product-drop-prep"
   ]
 }
