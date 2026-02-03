@@ -30,8 +30,8 @@
         "buttons_XRG4Td": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Start shopping!",
-            "button_link_1": "shopify://collections/in-stock",
+            "button_label_1": "Shop The Drop!",
+            "button_link_1": "shopify://collections/product-drop",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -67,7 +67,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Wallpaper-MegaEvolutions.png",       
+        "image": "shopify://shop_images/Wallpaper-MegaEvolutions.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "fixed",
