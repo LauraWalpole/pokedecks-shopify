@@ -3,6 +3,7 @@
 {% assign onepiece = metaobjects.tcg.one-piece %}
 {% assign lorcana = metaobjects.tcg.disney-lorcana %}
 {% assign gundam = metaobjects.tcg.gundam %}
+{% assign riftbound = metaobjects.tcg.riftbound %}
 
 
 <section class="custom-section-pattern-1 custom-section-pattern-1--dark">
@@ -163,6 +164,47 @@ Gundam TCG
   </div>
        <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-left-flat-bottom custom-divider--tropical-gradient">
  </div>
+
+</section>
+
+{% comment %}
+Riftbound
+{% endcomment %}
+
+
+<section class="section-padded">
+  
+    <div class="content-column-flex page-width">
+      <a href="pages/tcg/{{ riftbound.name | handle }}">
+
+      <div class="custom-image-container custom-image-container--mid-grey custom-image-container--border custom-image-container--shadow-mid-grey">
+  <div class="custom-container-two-sided" style="background: linear-gradient(-45deg, {{ riftbound.secondary_colour }} 0%, #ffffff 50%, {{ riftbound.primary_colour }} 100%)">
+    <img
+          class="custom-image-container__image"
+          src="{{ riftbound.image | image_url: width: '750', height: '500'  }}"
+          width=100%
+          height=100%
+        />
+    <div class="custom-container-two-sided__content" style="background: linear-gradient(-45deg, {{ riftbound.secondary_colour }} 0%, #ffffff 50%, {{ riftbound.primary_colour }} 100%)">
+      <div class="custom-container-two-sided__inner">
+        <div class="custom-container-two-sided__text-container">
+        <h1 class="custom-container-two-sided__title center">{{ riftbound.headline }}</h1>
+        <p class="custom-container-two-sided__description center">
+      {{ riftbound.description }}
+        </p>
+        </div>
+
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</a>
+
+  </div>
+     <div class="custom-divider custom-divider--wide custom-divider--tall custom-divider--trapezoid-heavy-right-flat-bottom custom-divider--tropical-gradient">
+ </div>
+
 
 </section>
 
