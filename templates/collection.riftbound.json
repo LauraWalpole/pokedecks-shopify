@@ -9,14 +9,14 @@
  */
 {
   "sections": {
-    "collection-banner-lorcana-set": {
-      "type": "collection-banner-lorcana-set",
+    "collectionRiftboundSet": {
+      "type": "collectionRiftboundSet",
       "settings": {
         "color_scheme": "scheme-6"
       }
     }
   },
   "order": [
-    "collection-banner-lorcana-set"
+    "collectionRiftboundSet"
   ]
 }
