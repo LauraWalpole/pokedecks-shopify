@@ -3,46 +3,21 @@
 
 <section class="section-light-grey">
   <div class="page-width">
-    {% if product.metafields.custom.product_contents_booster_packs != blank
-      or product.metafields.custom.product_contents_promo_cards != blank
-      or product.metafields.custom.product_contents_other != blank
-    %}
+
       <div class="product-info-container">
         <h2 class="contents-header">What's Included?</h2>
-        {% if product.metafields.custom.product_contents_booster_packs != blank %}
+        
           <div class="product-info-row">
-            <p class="product-info-title">{{ product.metafields.custom.booster_pack_quantity.value }} Booster Packs:</p>
-            <ul class="product-info-value">
-              {{ product.metafields.custom.product_contents_booster_packs | metafield_tag }}
-            </ul>
+            <p class="product-info-value">{{ product.description }} </p>
           </div>
-        {% endif %}
 
-        {% if product.metafields.custom.product_contents_promo_cards != blank %}
-          <div class="product-info-row">
-            <p class="product-info-title">Single Cards:</p>
-            <ul class="product-info-value">
-              {{ product.metafields.custom.product_contents_promo_cards | metafield_tag }}
-            </ul>
-          </div>
-        {% endif %}
-
-        {% if product.metafields.custom.product_contents_other != blank %}
-          <div class="product-info-row">
-            <p class="product-info-title">Other Contents:</p>
-            <ul class="product-info-value">
-              {{ product.metafields.custom.product_contents_other | metafield_tag }}
-            </ul>
-          </div>
-        {% endif %}
       </div>
-    {% endif %}
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Product info pkmn tcg",
+  "name": "Product info general",
   "settings": []
 }
 {% endschema %}

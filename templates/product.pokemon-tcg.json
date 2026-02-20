@@ -84,7 +84,7 @@
       }
     },
     "product-info-pkmn-tcg": {
-      "type": "product-info-pkmn-tcg",
+      "type": "product-info-general",
       "settings": {}
     },
     "related-products": {
