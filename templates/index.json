@@ -30,12 +30,12 @@
         "buttons_XRG4Td": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Start shopping!",
-            "button_link_1": "shopify://collections/in-stock",
+            "button_label_1": "Shop the drop!",
+            "button_link_1": "shopify://collections/product-drop-22-02-2026",
             "button_style_secondary_1": false,
-            "button_label_2": "",
+            "button_label_2": "View all available stock",
             "button_link_2": "shopify://collections/in-stock",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": true
           }
         }
       },
