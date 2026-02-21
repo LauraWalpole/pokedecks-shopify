@@ -59,6 +59,57 @@
         "show_text_below": false
       }
     },
+    "rich_text_TT4HNm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_DUNdCL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_DUNdCL"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "177168447754a75cf9": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_k4aBWT": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "881990",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_k4aBWT"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "homepage-tcg-collections": {
       "type": "homepage-tcg-collections",
       "settings": {}
@@ -87,6 +138,8 @@
   },
   "order": [
     "image_banner_iAHwGd",
+    "rich_text_TT4HNm",
+    "177168447754a75cf9",
     "homepage-tcg-collections",
     "image_banner_gjVDh9",
     "homepage-releasecalendar"
