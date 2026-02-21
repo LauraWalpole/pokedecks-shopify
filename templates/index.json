@@ -62,15 +62,35 @@
     "rich_text_TT4HNm": {
       "type": "rich-text",
       "blocks": {
+        "heading_zimHpc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Exclusive product draw",
+            "heading_size": "h1"
+          }
+        },
         "text_DUNdCL": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Due to extremely limited supply, we're making x1 Pokemon TCG: Destined Rivals Booster Box and x1 One Piece: Heroines Edition Booster box available to purchase via a lottery.  Please register your interest below!<br/>One winner will be selected for each product and will be sent an invoice which will need to be paid to secure the item.<br/>Please review the full terms and conditions of the product draw prior to entering.</p>"
+          }
+        },
+        "button_MkreCp": {
+          "type": "button",
+          "settings": {
+            "button_label": "Product draw details",
+            "button_link": "shopify://pages/pokedecks-random-draw",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "text_DUNdCL"
+        "heading_zimHpc",
+        "text_DUNdCL",
+        "button_MkreCp"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
