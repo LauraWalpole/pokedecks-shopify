@@ -1,12 +1,342 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
 
-{% assign franchise = metaobjects.tcg.mtg %}
+{% assign franchise = metaobjects.tcg.magic-the-gathering %}
 
 {% assign expansions_with_dates = '' %}
-{% assign riftbound_expansion_list = metaobjects.riftbound_expansions.values %}
+{% assign mtg_expansion_list = metaobjects.magic_the_gathering_expansions.values %}
 <!-- Build sortable string array (release_date|expansion_name) -->
-{% for expansion in riftbound_expansion_list %}
+{% for expansion in mtg_expansion_list %}
     {% assign expansion_entry = expansion.release_date | append: '|' | append: expansion.name %}
     {% assign expansions_with_dates = expansions_with_dates | append: ',' | append: expansion_entry %}
 {% endfor %}
+
+<!-- Remove leading comma -->
+{% assign expansions_with_dates = expansions_with_dates | remove_first: ',' %}
+
+<!-- Sort and reverse the array -->
+{% assign sorted_expansions = expansions_with_dates | split: ',' | sort | reverse %}
+
+{% style %}
+          .flex-row {
+          display: flex;
+          justify-content: center;
+          margin-left: 20px;
+          margin-right: 20px;
+          max-width: var(--page-width);
+          width: 100%;
+        }
+
+          .flex-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        max-width: var(--page-width);
+        width: 100%;
+      }
+  
+      .tcg-card-inactive {
+        display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          border-radius: 10px;
+          transition: all 0.5s ease;
+          box-shadow: none;
+          margin: 20px;
+          width: fit-content;
+          height: fit-content;
+      }
+
+
+
+
+  .tcg-card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          border-radius: 10px;
+          transition: all 0.5s ease;
+          box-shadow: none;
+          margin: 20px;
+          width: fit-content;
+          height: fit-content;
+        }
+
+
+        .tcg-card::before {
+          content: '';
+          position: absolute;
+          inset: -5px;
+          border-radius: 10px;
+          background: linear-gradient(-45deg, #2c3a57 0%, #8c9eb1 100%);
+          z-index: -1;
+          transition: transform 0.6s ease-in-out, background 0.6s ease-in-out;
+          opacity: 1;
+        }
+
+        .tcg-card:hover,
+        .tcg-card:focus-within {
+          transform: scale(1.05);
+        }
+
+        .tcg-card:hover::before,
+        .tcg-card:focus-within::before {
+          transform: rotate(90deg);
+          background: linear-gradient(-45deg, {{ franchise.primary_colour}} 0%, {{ franchise.secondary_colour }} 100%);
+        }
+
+        .tcg-card:hover::after,
+        .tcg-card:focus-within::after {
+          opacity: 1;
+          filter: blur(15px);
+        }
+
+        .expansion-image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: fit-content;
+          height: fit-content;
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        .card-logo {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+        }
+
+        .main-expansions-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+
+    .expansion-column {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+        @media (max-width: 768px) {
+
+          .flex-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+          .tcg-card {
+            flex: 1 1 100%;
+            max-width: 90%;
+          }
+
+          .page-description-card {
+            max-width: 90%;
+            padding: 5px;
+          }
+
+          .heading-page {
+            font-size: 24px;
+            padding: 5px;
+          }
+        }
+
+       @media (max-width: 1024px, min-width: 769px) {
+        .flex-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    .pokedecks-category__data-wrapper::before{
+    background: linear-gradient(45deg, {{ franchise.primary_colour }}, {{franchise.secondary_colour}} );
+  }
+
+
+  .pokedecks-category__data-wrapper::after {
+    border-color: (0,0,0,0.2);
+    background-color: #f0e8df;
+  }
+
+  .collection-data-cell{
+    background-color: {{ franchise.primary_colour }}
+  }
+
+
+  .midground-container {
+  position: relative; 
+  z-index: 1;         
+  width: 100%;
+  margin-top: 2rem;   
+}
+
+.hero-fullwidth {
+  position: relative;
+  width: 100%;
+  min-height: 65vh;
+  height: auto;
+  overflow: visible;
+  display: block; 
+}
+
+.hero--short {
+  height: 65vh;
+
+}
+
+
+.foreground-container {
+  position: relative;         
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-content {
+  {
+  position: relative;
+  z-index: 2;               
+  display: grid;            
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;           
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.custom-divider--theme-colour {
+  background: {{ franchise.primary_colour }};
+}
+
+.text-content--dark {
+  color: #000;
+}
+}
+
+{% endstyle %}
+
+<section class="hero-fullwidth">
+  <div class="hero-background">
+    <img class="background-image background-image--fixed" src="{{ franchise.cover_image | image_url: width: 1080, height: 500 }} " width= 100% height= 100%/>
+
+  </div>
+  <!-- Container for logo and product grid -->
+  <div class="hero-content collection page-width">
+
+<!-- Row 1: Logo and collection info-->
+    <div class="foreground-container">
+    <div class="flex-row-center">
+      <img
+          src="{{ franchise.logo | image_url: width: 750, height: 450 }}"
+          width= 100%
+          height= 100%
+        />
+    </div>
+      <div class="flex-row-center">
+    <div class="text-content-container">
+        <div class="pokedecks-category__data-wrapper">
+        <div class="collection-data-grid">
+          <div class="collection-data-item">
+            <h1 class="collection-data-title">{{ franchise.headline }}</h1>
+          </div>
+           <div class="collection-data-item">
+            {{ franchise.description }}
+            </div>
+          
+
+  
+          
+          <div class="collection-data-item">
+          <div class="collection-data-cell">
+            <div class="collection-data-text-content text-content--light">
+            <p class="collection-data-subtitle "><strong>Latest release</strong></p>
+            <p class="collection-data-value">
+              {{ franchise.latest_release_name }}</p>
+            <p class="collection-data-value">Released on {{ franchise.latest_release_date | metafield_tag }}</p>
+            </div>
+          </div>
+          <div class="collection-data-cell">
+            <div class="collection-data-text-content text-content--light">
+            <p class="collection-data-subtitle"><strong>Next release</strong></p>
+            
+            <p class="collection-data-value">
+              {% if  franchise.next_release_name %} 
+              {{ franchise.next_release_name }}
+              {% else %} TBC
+              {% endif %}
+            </p>
+            <p class="collection-data-value">
+              {% if franchise.next_release_date %}
+              Scheduled for release on {{ franchise.next_release_date | metafield_tag }}
+              {% else %} TBC    
+              {% endif %}        
+            </p>
+            </div>
+          </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+   
+    </div>
+
+<!-- Section: Sorted Expansion Tiles -->
+<div class="flex-page">
+  <div class="flex-row">
+    <div class="flex-grid">
+      {% for sorted_expansion in sorted_expansions %}
+        {% assign parts = sorted_expansion | split: '|' %}
+        {% assign expansion_name = parts[1] %}
+
+        {% for expansion in mtg_expansion_list %}
+          
+          {% if expansion.name == expansion_name %}
+
+            {% if expansion.has_collection == true %}
+            <a href="{{ routes.collections_url}}/{{ expansion.name | handle }}" class="tcg-card-link">
+              <div class="tcg-card">
+                <div class="expansion-image">
+                  <img
+                    class="card-logo"
+                    src="{{ expansion.image | image_url: width: '500', height: '500' }}"
+                    alt="{{ expansion.name }} Logo"
+                    height="{{ expansion.image.height }}"
+                    width="{{ expansion.image.width }}"
+                  >
+                </div>
+              </div>
+            </a>
+          {% else %}
+            <div class="tcg-card-inactive">
+            <div class="expansion-image">
+              <img
+                class="card-logo"
+                src="{{ expansion.image | image_url: width: 500, height: 500 }}"
+                alt="{{ expansion.name }} Logo"
+                height="{{ expansion.image.height }}"
+                width="{{ expansion.image.width }}"
+              >
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+  </section>
