@@ -46,7 +46,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Wallpaper-PhantasmalFlames.png",
+        "image": "shopify://shop_images/Wallpaper-AscendedHeroes.png",
         "image_overlay_opacity": 60,
         "image_height": "adapt",
         "image_behavior": "fixed",
@@ -67,7 +67,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Wallpaper-MegaEvolutions.png",
+        "image": "shopify://shop_images/collectionBanner-spiritforged.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "fixed",
