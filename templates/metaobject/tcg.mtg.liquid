@@ -1,2 +1,12 @@
 {{ 'pokedecks-category-components.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
+
+{% assign franchise = metaobjects.tcg.mtg %}
+
+{% assign expansions_with_dates = '' %}
+{% assign riftbound_expansion_list = metaobjects.riftbound_expansions.values %}
+<!-- Build sortable string array (release_date|expansion_name) -->
+{% for expansion in riftbound_expansion_list %}
+    {% assign expansion_entry = expansion.release_date | append: '|' | append: expansion.name %}
+    {% assign expansions_with_dates = expansions_with_dates | append: ',' | append: expansion_entry %}
+{% endfor %}
