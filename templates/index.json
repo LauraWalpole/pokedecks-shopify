@@ -59,77 +59,6 @@
         "show_text_below": false
       }
     },
-    "rich_text_TT4HNm": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_zimHpc": {
-          "type": "heading",
-          "settings": {
-            "heading": "Exclusive product draw",
-            "heading_size": "h1"
-          }
-        },
-        "text_DUNdCL": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Due to extremely limited supply, we're making x1 Pokemon TCG: Destined Rivals Booster Box and x1 One Piece: Heroines Edition Booster box available to purchase via a lottery.  Please register your interest below!<br/>One winner will be selected for each product and will be sent an invoice which will need to be paid to secure the item.<br/>Please review the full terms and conditions of the product draw prior to entering.</p>"
-          }
-        },
-        "button_MkreCp": {
-          "type": "button",
-          "settings": {
-            "button_label": "Product draw details",
-            "button_link": "shopify://pages/pokedecks-random-draw",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_zimHpc",
-        "text_DUNdCL",
-        "button_MkreCp"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "177168447754a75cf9": {
-      "type": "apps",
-      "blocks": {
-        "forms_inline_k4aBWT": {
-          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
-          "settings": {
-            "form_id": "881990",
-            "text_color": "#202020",
-            "button_background_color": "#46d5bf",
-            "button_label_color": "#ffffff",
-            "links_color": "#1878b9",
-            "errors_color": "#e02229",
-            "text_alignment": "center",
-            "form_alignment": "center",
-            "padding_top": 0,
-            "padding_bottom": 24,
-            "padding_right": 0,
-            "padding_left": 0
-          }
-        }
-      },
-      "block_order": [
-        "forms_inline_k4aBWT"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
     "homepage-tcg-collections": {
       "type": "homepage-tcg-collections",
       "settings": {}
@@ -158,8 +87,6 @@
   },
   "order": [
     "image_banner_iAHwGd",
-    "rich_text_TT4HNm",
-    "177168447754a75cf9",
     "homepage-tcg-collections",
     "image_banner_gjVDh9",
     "homepage-releasecalendar"
